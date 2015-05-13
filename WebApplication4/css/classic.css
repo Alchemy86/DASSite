@@ -1,0 +1,95 @@
+/**
+ * default development theme for jQeditRangeSlider
+ * Using fam fam icon set from Mark James, http://www.famfamfam.com/lab/icons/silk/ (Creative Commons Attribution 2.5 License)
+ */
+
+.ui-editRangeSlider{
+	height:22px;
+}
+
+.ui-editRangeSlider .ui-editRangeSlider-innerBar{
+	height:16px;
+	margin:3px 6px;
+	background:#DDD;
+}
+
+.ui-editRangeSlider .ui-editRangeSlider-handle{
+	width:6px;
+	height:22px;
+	background:#AAA;
+	background:rgba(100,100,100, 0.3);
+	cursor:col-resize;
+}
+
+.ui-editRangeSlider .ui-editRangeSlider-bar{
+	margin: 1px 0;
+	background:#CCC;
+	background:rgba(100,100,150, 0.2);
+	height:20px;
+	cursor:move;
+	cursor:grab;
+	cursor: -moz-grab;
+}
+
+.ui-editRangeSlider .ui-editRangeSlider-bar.ui-draggable-dragging{
+	cursor:	-moz-grabbing;
+	cursor:grabbing;
+}
+
+.ui-editRangeSlider-arrow{
+	height:16px;
+	margin:2px 0;
+	width:16px;
+	background-repeat:no-repeat;
+}
+
+.ui-editRangeSlider-arrow.ui-editRangeSlider-leftArrow{
+	background-image: url('icons-classic/resultset_previous.png');
+	background-position:center left;
+}
+
+.ui-editRangeSlider-arrow.ui-editRangeSlider-rightArrow{
+	background-image: url('icons-classic/resultset_next.png');
+	background-position:center right;
+}
+
+.ui-editRangeSlider-arrow-inner{
+	display: none;
+}
+
+.ui-editRangeSlider-container{
+	height:22px;
+}
+
+.ui-editRangeSlider-withArrows .ui-editRangeSlider-container{
+	margin:0 11px;
+}
+
+.ui-editRangeSlider-noArrow .ui-editRangeSlider-container{
+	margin:0;
+}
+
+.ui-editRangeSlider-label{
+	margin:0 2px 2px;
+	background-image:url('icons-classic/label.png');
+	background-position:bottom center;
+	background-repeat:no-repeat;
+  white-space: nowrap;
+  bottom:20px;
+  padding:3px 6px 7px;
+  cursor:col-resize;
+}
+
+.ui-editRangeSlider-label-inner{
+	display:none;
+}
+
+/*
+ * Edit slider
+ */
+
+input.ui-editeditRangeSlider-inputValue{
+	width:3em;
+	vertical-align: middle;
+	text-align:center;
+}

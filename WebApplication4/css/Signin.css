@@ -1,0 +1,121 @@
+﻿body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+    background-color: #ffffff;
+}
+
+.login-container {
+    margin: 60px;
+}
+
+#tabs {
+    background-color: #ffffff;
+}
+
+.label1,
+.label1:hover,
+.label1:focus,
+.label1:active,
+.label1.active,
+.label1.disabled,
+.label1[disabled] {
+    margin-left: auto;
+    margin-right: auto;
+    color: #228b22;
+     text-align: center;
+     font-weight: bold;
+     font-size: 12px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 5px;
+  margin: 0 auto;
+  border: 100px;
+  background: #f8f8f8;
+  padding: 10px 39px 19px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  -moz-box-shadow: 0 0 6px #999;
+  -webkit-box-shadow: 0 0 6px #999;
+  box-shadow: 0 0 6px #999;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.form-signin-heading {
+      text-align: center;
+      display: block;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+  font-size: 14px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  font-size: 14px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    -ms-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -ms-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 25px;
+    -ms-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -ms-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.btn-custom-lighten.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-custom-lighten {
+    font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #52da30;
+  background-image: -moz-linear-gradient(top, #45d421, #65e246);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#45d421), to(#65e246));
+  background-image: -webkit-linear-gradient(top, #45d421, #65e246);
+  background-image: -o-linear-gradient(top, #45d421, #65e246);
+  background-image: linear-gradient(to bottom, #45d421, #65e246);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff45d421', endColorstr='#ff65e246', GradientType=0);
+  border-color: #65e246 #65e246 #3ebe1e;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #65e246;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-custom-lighten:hover,
+.btn-custom-lighten:focus,
+.btn-custom-lighten:active,
+.btn-custom-lighten.active,
+.btn-custom-lighten.disabled,
+.btn-custom-lighten[disabled] {
+  color: #ffffff;
+  background-color: #65e246;
+  *background-color: #53df30;
+}
+.btn-custom-lighten:active,
+.btn-custom-lighten.active {
+  background-color: #45d421 ;
+}

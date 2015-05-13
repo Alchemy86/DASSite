@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication4.Site1" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Web Based Bids</title>
+
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+           <script language="JavaScript" type="text/javascript">
+               /*<![CDATA[*/
+
+               function zxcCountDown(id, mess, secs, mins, hrs, days) {
+                   var obj = document.getElementById(id);
+                   var oop = obj.oop
+                   if (!oop) obj.oop = new zxcCountDownOOP(obj, mess, secs, mins, hrs, days);
+                   else {
+                       clearTimeout(oop.to);
+                       oop.mess = mess;
+                       oop.mhd = [mins, hrs, days];
+                       oop.srt = new Date().getTime();
+                       oop.fin = new Date().getTime() + ((days || 0) * 86400) + ((hrs || 0) * 3600) + ((mins || 0) * 60) + ((secs || 0));
+                       oop.end = ((oop.fin - oop.srt));
+                       oop.to = null;
+                       oop.cng();
+                   }
+               }
+
+               function zxcCountDownOOP(obj, mess, secs, mins, hrs, days) {
+                   this.obj = obj;
+                   this.mess = mess;
+                   this.mhd = [mins, hrs, days];
+                   var date = new Date();
+                   this.fin = new Date(date.getFullYear(), date.getMonth(), date.getDate() + (days || 0), date.getHours() + (hrs || 0), date.getMinutes() + (mins || 0), date.getSeconds() + (secs || 0));
+                   this.to = null;
+                   this.cng();
+               }
+
+               zxcCountDownOOP.prototype.cng = function () {
+                   var now = new Date(), s = (this.fin - now) / 1000 + 1, d = Math.floor(s / 60 / 60 / 24), h = Math.floor(s / 60 / 60 - d * 24), m = Math.floor(s / 60 - h * 60 - d * 24 * 60), s = Math.floor(s - m * 60 - h * 3600 - d * 24 * 60 * 60);
+                   if (this.fin - now > -500) {
+                       this.obj.innerHTML = (this.mhd[2] ? (d > 9 ? d : '0' + d) + ' days ' : '') + (this.mhd[1] || this.mhd[2] ? (h > 9 ? h : '0' + h) + ' hours ' : '') + (this.mhd[0] || this.mhd[1] || this.mhd[2] ? (m > 9 ? m : '0' + m) + ' minutes ' : '') + (s > 9 ? s : '0' + s) + ' seconds';
+                       this.to = setTimeout(function (oop) { return function () { oop.cng(); } }(this), 1000);
+                   }
+                   else {
+                       this.obj.innerHTML = this.mess || '';
+                   }
+               }
+
+               /*]]>*/
+</script>
+
+</head>
+<body>
+    
+    <form id="Form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">
+                <a id="SetBid" data-toggle="modal" data-id="<%#Eval("accountID")%>" href="#bugreport" class="btn btn-xs btn-info">Report a Bug</a>
+                <span id="sent" runat="server"></span>
+                </p>
+                <!--<a href="" target="_blank" class="navbar-btn btn-danger btn pull-right">Auction Sniper WEB</a>-->
+            </div>
+        </div>
+        </div>
+    </form>
+</body>
+</html>

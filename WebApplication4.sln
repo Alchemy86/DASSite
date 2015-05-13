@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication4", "WebApplication4\WebApplication4.csproj", "{296CC743-5738-4A89-8FD3-6A1B0DB81610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunchboxWebControls", "LunchboxWebControls\LunchboxWebControls.csproj", "{B1A6B7F3-2A75-45BC-84DC-568209DFEF8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASEntityFramework", "..\DASService\AuctionSniperDLL\ASEntityFramework\ASEntityFramework.csproj", "{8C22DFDB-9D39-47C8-82AE-758663BF4990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionSniperDLL", "..\DASService\AuctionSniperDLL\AuctionSniperDLL\AuctionSniperDLL.csproj", "{99972A52-4922-4DC6-A51C-3302B493E807}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{296CC743-5738-4A89-8FD3-6A1B0DB81610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296CC743-5738-4A89-8FD3-6A1B0DB81610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296CC743-5738-4A89-8FD3-6A1B0DB81610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296CC743-5738-4A89-8FD3-6A1B0DB81610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A6B7F3-2A75-45BC-84DC-568209DFEF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A6B7F3-2A75-45BC-84DC-568209DFEF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A6B7F3-2A75-45BC-84DC-568209DFEF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A6B7F3-2A75-45BC-84DC-568209DFEF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99972A52-4922-4DC6-A51C-3302B493E807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99972A52-4922-4DC6-A51C-3302B493E807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99972A52-4922-4DC6-A51C-3302B493E807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99972A52-4922-4DC6-A51C-3302B493E807}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
