@@ -246,7 +246,7 @@ namespace WebApplication4
             ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "$(document).ready(function(){EnableControls();alert('Overrides successfully Updated.');DisableControls();});", true);
 
             FormsAuthentication.SignOut();
-            Response.Redirect("Logon.aspx");
+            Response.Redirect("~/LoginPage.aspx");
         }
 
         protected void verify_click(object sender, EventArgs e)
@@ -431,10 +431,7 @@ namespace WebApplication4
 
             using (var ds = new ASEntities())
             {
-                if (!ds.SearchConfig.Any(x => x.UserID == Account.UserID))
-                {
-                    AddNewSearchConfig(Account.UserID, "Default");
-                }
+                SetSearchValues();
                 var activeSearch = ds.SearchConfig.FirstOrDefault(x => x.UserID == Account.UserID && x.Active);
                 activeSearch.PRMin = int.Parse(PageRankHiddenMin.Value);
                 activeSearch.PRMax = int.Parse(PageRankHiddenMax.Value);
@@ -756,7 +753,7 @@ namespace WebApplication4
 
         private void PerformAdvSearch()
         {
-            if (!DCop.Login(AppConfig.GetSystemConfig("DomCopUser"), AppConfig.GetSystemConfig("DomCopPass"))) return;
+            if (!DCop.Login(AppConfig.GetSystemConfig(AppSettings.DomCopUser), AppConfig.GetSystemConfig(AppSettings.DomCopPass))) return;
             DCop.Search(Account.UserID);
             using (var ds = new ASEntities())
             {
@@ -783,7 +780,7 @@ namespace WebApplication4
             if (IsPostBack)
             {   
                 var moo = bugtxtv.Text;
-                API.Email(AppConfig.GetSystemConfig("AlertEmail"), "Bug Report",
+                API.Email(AppConfig.GetSystemConfig(AppSettings.AlertEmail), "Bug Report",
                                  "Account: " + Context.User.Identity.Name + Environment.NewLine +
                                  "Description: " + moo, "Service Manager Bug Report");
                 sentmessage.Text = @"Bug Report Sent. Thank you for the feedback";

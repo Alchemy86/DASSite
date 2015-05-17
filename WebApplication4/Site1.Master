@@ -73,14 +73,14 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <div class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-                <p class="navbar-text pull-left">
-                <a id="SetBid" data-toggle="modal" data-id="<%#Eval("accountID")%>" href="#bugreport" class="btn btn-xs btn-info">Report a Bug</a>
-                <span id="sent" runat="server"></span>
-                </p>
-                <!--<a href="" target="_blank" class="navbar-btn btn-danger btn pull-right">Auction Sniper WEB</a>-->
+                <div class="container">
+                    <p class="navbar-text pull-left">
+                    <a id="SetBid" data-toggle="modal" data-id="<%#Eval("accountID")%>" href="#bugreport" class="btn btn-xs btn-info">Report a Bug</a>
+                    <span id="sent" runat="server"></span>
+                    </p>
+                    <!--<a href="" target="_blank" class="navbar-btn btn-danger btn pull-right">Auction Sniper WEB</a>-->
+                </div>
             </div>
-        </div>
         </div>
     </form>
 </body>

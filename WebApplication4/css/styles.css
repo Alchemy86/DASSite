@@ -1,15 +1,29 @@
 
 body {
-    
-    margin-bottom: 80px;
-    padding-top: 40px;
+
+  background: #eee url("../img/login_sprites.png") repeat-x left -958px !important;
+}
+
+#body {
+        
+  margin-bottom: 80px;
+  padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5efe6;
+    height: 100%;
+
 }
 
 html, body
 {
     
+}
+
+#cornerlogo {
+    background-image: url("../img/sun.png");
+    background-repeat: no-repeat;
+    background-position-x: -60px;
+    background-position-y: -80px;
+    height: 100%;
 }
 
 #maincontent {
@@ -58,10 +72,6 @@ html, body
 .carousel .item > img {
     margin-left: auto;
     margin-right: auto;
-}
-
-#loginhome {
-    background: #eee url("https://launchpad-asset2.37signals.com/images/login_sprites.png?1416436001") repeat-x left -938px !important;
 }
 
 .gridSpacing

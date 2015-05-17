@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="WebApplication4.Master.Default" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleHolder" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <link href="../css/bootstrap-switch.css" rel="stylesheet" /> 
+    <link href="../css/highlight.css" rel="stylesheet" />
+    <link href="../css/iThing.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/searchfunctions.js"></script>
+    <asp:ContentPlaceHolder ID="HeadHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+
+        $('body').on('click', '#btn-group-instance button', function () {
+            $(this).toggleClass('active');
+            // if active/else not active logic
+        });
+
+        function CorrectCorner() {
+            location.reload();
+            document.getElementById("maincontent").setAttribute("border-top-left-radius", "0px");
+        }
+    </script>
+
+</head>
+<body>
+    <div id="cornerlogo">
+        <div id="body">
+         <form id="Form1" runat="server">
+        <div class="container body-content">
+            <div class="container">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    <Scripts>
+                        <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                        <%--Framework Scripts--%>
+
+                        <%--Site Scripts--%>
+                    </Scripts>
+                </asp:ScriptManager>
+                  <div class="pull-right">
+                  <asp:Label ID="Welcome" runat="server" />
+                    <span style="padding-left: 20px">
+                        <asp:LinkButton ID="LinkButton1" OnClick="Signout_Click" class="btn btn-xs btn-info" runat="server">Sign Out  &nbsp;<span class="glyphicon glyphicon-off"></span></asp:LinkButton>
+                    </span>
+                  </div>
+
+                    <canvas id="flash" width="20" height="40"></canvas>
+                    <script>
+                        var canvas = document.getElementById("flash");
+                        var context = canvas.getContext("2d");
+                        context.arc(10, 10, 10, 0, Math.PI * 2, false);
+                        context.fillStyle = '#B00000';
+                        context.fill();
+                    </script>
+
+                    <div style="display: inline">
+                        <a href="../Default.aspx">
+                            <img style="margin-top: -25px" src="../img/textlogo.png" class="pull-left" alt=""/>
+                        </a>
+                        <a id="flash" class="pull-left"  href="~/Default.aspx#settings" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
+                        <asp:Label ID="AccountVerifiedLabel" class="pull-left" runat="server" />
+                    </div>
+                                  
+                  <asp:Label ID="sentmessage" style="display:none" Class="alert alert-success" role="alert" ForeColor="Green" runat="server" />
+
+            </div>
+
+            <asp:UpdateProgress ID="prgLoadingStatus" runat="server" DynamicLayout="true">
+            <ProgressTemplate>
+                <div id="overlay">
+                    <div id="modalprogress">
+                        <div id="theprogress" style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.7;">
+                            <asp:Image ID="imgWaitIcon" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/img/loading2.gif" />
+                        </div>
+                    </div>
+                </div>
+            </ProgressTemplate>
+            </asp:UpdateProgress>
+        
+            <ul id="tabs" class="nav nav-tabs">
+                <li class="active"><a id="Resize" href="#search" onclick="CorrectCorner()">Search</a></li>
+                <li><a href="#multibidtab">Multi Bid</a></li>
+                <li><a href="#mybids">My Bids   <span runat="server" id="bidcount" class="badge">0</span></a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li class="pull-right"><a href="#FAQ">FAQ</a></li>
+                <li class="pull-right"><a href="#Admin">Admin</a></li>
+            </ul>
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    
+        <!--Modals-->
+                <div class="modal fade" id="bugreport" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <asp:Panel ID="Panel1" runat="server" role="form"  class="form-inline" >
+                            <div class="modal-header">
+                                <h4>Report a bug <span class="glyphicon glyphicon-send pull-right"></span></h4>
+                            </div> 
+                            <div class="modal-body">
+                                <div class="form-group">
+                                <label for="inputbid" class="sr-only">Description</label>
+                                    <asp:TextBox  id="bugtxtv"  onkeyDown="checkTextAreaMaxLength(this,event,'500');" class="span12" rows="10" Columns="120" placeholder="Report your issue" TextMode="MultiLine" runat="server" type="text" width="100%" height="100%" MaxLength="500" required autofocus>
+                                            </asp:TextBox>
+                                </div>
+                                <asp:LinkButton ID="LinkButton2" OnClick="BtnSubmitBug" runat="server" class="btn btn-default">Submit</asp:LinkButton>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-default" data-dismiss="modal">Close</a>
+                            </div>
+                        </asp:Panel>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="FooterHolder" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="navbar navbar-default navbar-fixed-bottom">
+                    <div class="container">
+                        <p class="navbar-text pull-left">
+                        <a id="SetBid" data-toggle="modal" data-id="<%#Eval("accountID")%>" href="#bugreport" class="btn btn-xs btn-info">Report a Bug</a>
+                        <span id="sent" runat="server"></span>
+                        </p>
+                        <!--<a href="" target="_blank" class="navbar-btn btn-danger btn pull-right">Auction Sniper WEB</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

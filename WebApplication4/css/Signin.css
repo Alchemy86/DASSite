@@ -1,6 +1,6 @@
 ﻿body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
     background-color: #ffffff;
 }
 
@@ -10,6 +10,17 @@
 
 #tabs {
     background-color: #ffffff;
+}
+
+#loginhome {
+    background: #eee url("../img/login_sprites.png") repeat-x left -958px !important;
+}
+
+#loginbg {
+
+    background-image: url("../img/sun.png");
+    background-position: calc(50% - 250px) 50%;
+    background-repeat: no-repeat;
 }
 
 .label1,
