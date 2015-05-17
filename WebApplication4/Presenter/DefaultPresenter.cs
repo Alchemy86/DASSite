@@ -20,11 +20,15 @@ namespace WebApplication4.Presenter
             return model.GetUser(view.Username);
         }
 
+        public GoDaddyAccount GetGoDaddyAccount(Users user)
+        {
+            return model.GetGoDaddyAccount(user);
+        }
+
         public bool SubmitBug()
         {
             return model.SubmitBug(view.UserAccount, view.BugMessage);
         }
-
 
     }
 }

@@ -30,6 +30,7 @@
             location.reload();
             document.getElementById("maincontent").setAttribute("border-top-left-radius", "0px");
         }
+
     </script>
 
 </head>
@@ -67,7 +68,8 @@
                         <a href="../Default.aspx">
                             <img style="margin-top: -25px" src="../img/textlogo.png" class="pull-left" alt=""/>
                         </a>
-                        <a id="flash" class="pull-left"  href="~/Default.aspx#settings" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
+                        <a id="verifyaccount" class="pull-left"  href="~/Default.aspx#settings" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
+                        <a id="accountverified" runat="server" class="pull-left" data-toggle="tab">Account Verified: <i id="godaddydisplay" runat="server"> </i></a>
                         <asp:Label ID="AccountVerifiedLabel" class="pull-left" runat="server" />
                     </div>
                                   
@@ -104,22 +106,22 @@
                 <div class="modal fade" id="bugreport" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <asp:Panel ID="Panel1" runat="server" role="form"  class="form-inline" >
-                            <div class="modal-header">
-                                <h4>Report a bug <span class="glyphicon glyphicon-send pull-right"></span></h4>
-                            </div> 
-                            <div class="modal-body">
-                                <div class="form-group">
-                                <label for="inputbid" class="sr-only">Description</label>
-                                    <asp:TextBox  id="bugtxtv"  onkeyDown="checkTextAreaMaxLength(this,event,'500');" class="span12" rows="10" Columns="120" placeholder="Report your issue" TextMode="MultiLine" runat="server" type="text" width="100%" height="100%" MaxLength="500" required autofocus>
-                                            </asp:TextBox>
-                                </div>
-                                <asp:LinkButton ID="LinkButton2" OnClick="BtnSubmitBug" runat="server" class="btn btn-default">Submit</asp:LinkButton>
+                        <div class="modal-header">
+                            <h4>Report a bug <span class="glyphicon glyphicon-send pull-right"></span></h4>
+                        </div> 
+                        <div class="modal-body">
+                            <div class="form-group">
+                            <label for="inputbid" class="sr-only">Description</label>
+                                <asp:TextBox  id="bugtxtv"  onkeyDown="checkTextAreaMaxLength(this,event,'500');" class="span12" rows="10" Columns="120" placeholder="Report your issue" TextMode="MultiLine" runat="server" type="text" width="100%" height="100%" MaxLength="500" required autofocus>
+                                </asp:TextBox>
                             </div>
-                            <div class="modal-footer">
-                                <a class="btn btn-default" data-dismiss="modal">Close</a>
-                            </div>
-                        </asp:Panel>
+
+                            <asp:LinkButton ID="LinkButton2" OnClick="BtnSubmitBug" runat="server" class="btn btn-default">Submit</asp:LinkButton>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-default" id="closebug" data-dismiss="modal">Close</a>
+                        </div>
                     </div>
                 </div>
             </div>

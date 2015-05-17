@@ -49,5 +49,15 @@ namespace WebApplication4.Model
         {
             return Ds.Users.First(x => x.Username == username);
         }
+
+        /// <summary>
+        /// Get the users godaddy account
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public GoDaddyAccount GetGoDaddyAccount(Users user)
+        {
+            return user.GoDaddyAccount.FirstOrDefault();
+        }
     }
 }

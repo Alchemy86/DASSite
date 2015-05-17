@@ -84,6 +84,7 @@
     <Content Include="img\domain-auction-sniper-logo.png" />
     <Content Include="img\login_sprites.png" />
     <Content Include="img\sun.png" />
+    <Content Include="img\textlogo.png" />
     <Content Include="js\bootstrap-modal.js" />
     <Content Include="js\bootstrap-slider.js" />
     <Content Include="js\bootstrap-switch.js" />
