@@ -40,6 +40,15 @@ html, body
     padding-bottom: 20px;
 }
 
+#newpagecontent {
+    height: 100%;
+    position: fixed;
+    background-color: #ffffff;
+    width: inherit;
+    overflow-x:hidden;
+    opacity:.8;
+}
+
 
 .bidtolow {
     background-color: #990000;

@@ -98,9 +98,13 @@
                 <li class="pull-right"><a href="#Admin">Admin</a></li>
             </ul>
         </div>
-
+             
+             <div class="container body-content">
+                 <div id="newpagecontent">
         <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
         </asp:ContentPlaceHolder>
+                     </div>
+                 </div>
     
         <!--Modals-->
                 <div class="modal fade" id="bugreport" role="dialog">
