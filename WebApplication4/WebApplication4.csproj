@@ -73,8 +73,10 @@
     <Content Include="css\classic.css" />
     <Content Include="css\highlight.css" />
     <Content Include="css\iThing.css" />
+    <Content Include="css\Setup.css" />
     <Content Include="css\Signin.css" />
     <Content Include="css\slider.css" />
+    <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\addv2.png" />
@@ -94,14 +96,14 @@
     <Content Include="js\jQRangeSlider-min.js" />
     <Content Include="js\JQSlierCustomConfig.js" />
     <Content Include="js\searchfunctions.js" />
-    <Content Include="LogonOld.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="img\loading.gif" />
-    <Content Include="Default.aspx" />
+    <Content Include="Setup.aspx" />
+    <Content Include="OldDefault.aspx" />
     <Content Include="img\loading2.gif" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -114,22 +116,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\AppConfig.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="LogonOld.aspx.cs">
-      <DependentUpon>LogonOld.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LogonOld.aspx.designer.cs">
-      <DependentUpon>LogonOld.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Setup.aspx.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setup.aspx.designer.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OldDefault.aspx.cs">
+      <DependentUpon>OldDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OldDefault.aspx.designer.cs">
+      <DependentUpon>OldDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\OptimisePress.cs" />
     <Compile Include="Master\Default.Master.cs">

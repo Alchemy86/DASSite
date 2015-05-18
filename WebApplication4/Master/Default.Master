@@ -66,7 +66,7 @@
 
                     <div style="display: inline">
                         <a href="../Default.aspx">
-                            <img style="margin-top: -25px" src="../img/textlogo.png" class="pull-left" alt=""/>
+                            <img style="margin-top: -25px" src="img/textlogo.png" class="pull-left" alt=""/>
                         </a>
                         <a id="verifyaccount" class="pull-left"  href="~/Default.aspx#settings" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
                         <a id="accountverified" runat="server" class="pull-left" data-toggle="tab">Account Verified: <i id="godaddydisplay" runat="server"> </i></a>
@@ -99,12 +99,14 @@
             </ul>
         </div>
              
-             <div class="container body-content">
-                 <div id="newpagecontent">
-        <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
-        </asp:ContentPlaceHolder>
-                     </div>
-                 </div>
+        <div class="container body-content">
+            <div id="pagecontentbackground">
+                <div id="pagecontent">
+                    <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
     
         <!--Modals-->
                 <div class="modal fade" id="bugreport" role="dialog">
