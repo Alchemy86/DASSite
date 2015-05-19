@@ -22,22 +22,22 @@ namespace WebApplication4 {
         protected global::System.Web.UI.WebControls.Panel pnlCustomer;
         
         /// <summary>
-        /// inputEmail3 control.
+        /// GodaddyUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputEmail3;
+        protected global::System.Web.UI.WebControls.TextBox GodaddyUsername;
         
         /// <summary>
-        /// inputPassword3 control.
+        /// GodaddyPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPassword3;
+        protected global::System.Web.UI.WebControls.TextBox GodaddyPassword;
         
         /// <summary>
         /// LinkButton3 control.
@@ -47,5 +47,14 @@ namespace WebApplication4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        
+        /// <summary>
+        /// Msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Msg;
     }
 }

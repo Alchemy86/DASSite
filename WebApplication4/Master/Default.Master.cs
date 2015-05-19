@@ -23,6 +23,10 @@ namespace WebApplication4.Master
                 verifyaccount.Style.Add("display", "none");
                 godaddydisplay.InnerText = GoDaddyAccount.GoDaddyUsername;
             }
+            if (!DisplayAccountVerification)
+            {
+                accountverifictiondisplay.Style.Add("display","none");
+            }
         }
 
         public string BugMessage
@@ -88,6 +92,20 @@ namespace WebApplication4.Master
             var presenter = new DefaultPresenter(this);
             presenter.SubmitBug();
             ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "document.getElementById('bugtxtv').Value = '';", true);
+        }
+
+
+        public bool DisplayAccountVerification
+        {
+            get
+            {
+                if (Session["DisplayAccountVerification"] == null)
+                {
+                    return true;
+                }
+                return (bool)Session["DisplayAccountVerification"];
+            }
+            set { Session["DisplayAccountVerification"] = value; }
         }
     }
 }

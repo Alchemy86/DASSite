@@ -6,8 +6,11 @@ namespace WebApplication4.View
     {
         Users UserAccount { get; }
         GoDaddyAccount GoDaddyAccount { get; set; }
+
         string Username { get;  }
         string BugMessage { get; set; }
+
         bool AccountVerified { get; }
+        bool DisplayAccountVerification { get; set; }
     }
 }

@@ -126,6 +126,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\ISetupModel.cs" />
+    <Compile Include="Model\SetupModel.cs" />
+    <Compile Include="Presenter\SetupPresenter.cs" />
     <Compile Include="Setup.aspx.cs">
       <DependentUpon>Setup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,6 +173,7 @@
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="View\IDefaultView.cs" />
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\ISetupView.cs" />
     <Compile Include="Web References\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

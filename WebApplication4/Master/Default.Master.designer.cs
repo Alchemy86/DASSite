@@ -67,6 +67,15 @@ namespace WebApplication4.Master {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
+        /// accountverifictiondisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl accountverifictiondisplay;
+        
+        /// <summary>
         /// verifyaccount control.
         /// </summary>
         /// <remarks>

@@ -5,18 +5,18 @@ namespace WebApplication4.Presenter
 {
     public class LoginPresenter
     {
-        private ILoginView view;
-        private LoginModel model;
+        protected ILoginView View;
+        protected LoginModel Model;
 
         public LoginPresenter(ILoginView view)
         {
-            this.view = view;
-            model = new LoginModel();
+            View = view;
+            Model = new LoginModel();
         }
 
         public bool Login()
         {
-            return model.Login(view.UserName, view.Password);
+            return Model.Login(View.UserName, View.Password);
         }
 
     }

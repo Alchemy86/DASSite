@@ -7,7 +7,8 @@ namespace WebApplication4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (((Master.Default) Master).GoDaddyAccount != null)
+            // ReSharper disable once PossibleNullReferenceException
+            if (string.IsNullOrEmpty(((Master.Default) Master).GoDaddyAccount.GoDaddyUsername))
             {
                 Response.Redirect("Setup.aspx");
             }

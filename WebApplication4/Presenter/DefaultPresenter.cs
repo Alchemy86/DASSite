@@ -6,28 +6,28 @@ namespace WebApplication4.Presenter
 {
     public class DefaultPresenter
     {
-        private IDefaultView view;
-        private IDefaultModel model;
+        protected IDefaultView View;
+        protected IDefaultModel Model;
 
         public DefaultPresenter(IDefaultView view)
         {
-            this.view = view;
-            model = new DefaultModel();
+            View = view;
+            Model = new DefaultModel();
         }
 
         public Users GetUser()
         {
-            return model.GetUser(view.Username);
+            return Model.GetUser(View.Username);
         }
 
         public GoDaddyAccount GetGoDaddyAccount(Users user)
         {
-            return model.GetGoDaddyAccount(user);
+            return Model.GetGoDaddyAccount(user);
         }
 
         public bool SubmitBug()
         {
-            return model.SubmitBug(view.UserAccount, view.BugMessage);
+            return Model.SubmitBug(View.UserAccount, View.BugMessage);
         }
 
     }
