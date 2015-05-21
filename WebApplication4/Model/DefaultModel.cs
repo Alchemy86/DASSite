@@ -59,5 +59,6 @@ namespace WebApplication4.Model
         {
             return user.GoDaddyAccount.FirstOrDefault() ?? new GoDaddyAccount();
         }
+
     }
 }

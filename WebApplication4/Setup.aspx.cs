@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Web.UI;
 using WebApplication4.Presenter;
 using WebApplication4.View;
@@ -11,7 +12,7 @@ namespace WebApplication4
         protected void Page_Load(object sender, EventArgs e)
         {
             //This page has one purpose, add an account whe you have none so go back if you have one
-            if (DefaultView.UserAccount.GoDaddyAccount.Any())
+            if (DefaultView.UserAccount.GoDaddyAccount.Any(x=>x.Verified))
             {
                 Response.Redirect("Default.aspx");
             }
@@ -30,11 +31,16 @@ namespace WebApplication4
                 Msg.Text = @"Please add a password";
                 return;
             }
-            Msg.Text = "";
-            var presenter = new SetupPresenter(this);
-            presenter.CreateGoDaddyAccount();
-            DefaultView.DisplayAccountVerification = true;
-            Response.Redirect("Default.aspx");
+
+            if (Presenter.ValidateGodaddy(true))
+            {
+                DefaultView.DisplayAccountVerification = true;
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Msg.Text = @"Unable to verify account, please confirm your details.";
+            }
         }
 
         public string GoDaddyUsername
@@ -50,6 +56,17 @@ namespace WebApplication4
         public IDefaultView DefaultView
         {
             get { return (Master.Default)Master; }
+        }
+
+        public SetupPresenter Presenter
+        {
+            get {
+                if (Session["presenter"] != null)
+                {
+                    return (SetupPresenter) Session["presenter"];
+                }
+                return new SetupPresenter(this);
+            }
         }
     }
 }

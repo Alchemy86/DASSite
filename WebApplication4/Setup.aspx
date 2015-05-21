@@ -5,6 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadHolder" runat="server">
     <link href="css/Setup.css" rel="stylesheet" />
 </asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="PageTopDesc">
+    Account Registration
+</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentHolder" runat="server">
     <div class="form-signin">
         
@@ -18,22 +21,24 @@
 
             <div class="col-md-8 col-md-offset-3">
                 
-            <asp:Panel runat="server" ID="pnlCustomer" class="form-horizontal" role="form"  DefaultButton="LinkButton3">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">GoDaddy Login</label>
-                    <div class="col-md-6">
-                        <asp:TextBox type="text" class="form-control" ID="GodaddyUsername" placeholder="Username" runat="server" required autofocus/>
+            <asp:UpdatePanel runat="server" ID="pnlSetup" class="form-horizontal" role="form"  DefaultButton="LinkButton3">
+                <ContentTemplate>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">GoDaddy Login</label>
+                        <div class="col-md-6">
+                            <asp:TextBox type="text" class="form-control" ID="GodaddyUsername" placeholder="Username" runat="server" required autofocus/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Password</label>
-                    <div class="col-md-5">
-                        <asp:TextBox type="password" class="form-control" placeholder="Password" id="GodaddyPassword" TextMode="Password" runat="server" required />
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Password</label>
+                        <div class="col-md-5">
+                            <asp:TextBox type="password" class="form-control" placeholder="Password" id="GodaddyPassword" TextMode="Password" runat="server" required />
+                        </div>
+                        <asp:LinkButton ID="LinkButton3" Text="Save" class="btn btn-default" OnClick="btnSave_Godaddy" runat="server">Save</asp:LinkButton>
                     </div>
-                    <asp:LinkButton ID="LinkButton3" Text="Save" class="btn btn-default" OnClick="btnSave_Godaddy" runat="server">Save</asp:LinkButton>
-                </div>
-                <asp:Label ID="Msg" ForeColor="red" runat="server" />
-            </asp:Panel>
+                    <asp:Label ID="Msg" ForeColor="red" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
             </div>
         </div>
     </div>

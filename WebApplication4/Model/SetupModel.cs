@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Migrations;
+using System.Linq;
 using ASEntityFramework;
 
 namespace WebApplication4.Model
@@ -8,18 +9,25 @@ namespace WebApplication4.Model
 
         public void CreateGoDaddyAccount(Users user, string username, string password)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                return;
-            }
             using (var ds = new ASEntities())
             {
-                ds.GoDaddyAccount.AddOrUpdate(x=>x.GoDaddyUsername, new GoDaddyAccount
-                {
-                    GoDaddyUsername = username, 
-                    GoDaddyPassword = password, UserID = user.UserID
-                });
-                ds.Users.AddOrUpdate(user);
+                ds.GoDaddyAccount.Add(new GoDaddyAccount{GoDaddyUsername = username, GoDaddyPassword = password, UserID = user.UserID, Verified = true});
+                ds.SaveChanges();
+            }
+        }
+
+
+        public void DeleteGoDaddyAccount(Users account)
+        {
+            account.GoDaddyAccount.Clear();
+        }
+
+
+        public void Save(Users user)
+        {
+            using (var ds = new ASEntities())
+            {
+                ds.Users.Attach(user);
                 ds.SaveChanges();
             }
         }

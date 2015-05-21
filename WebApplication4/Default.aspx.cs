@@ -7,6 +7,7 @@ namespace WebApplication4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((Master.Default) Master).DisplayAccountVerification = true;
             // ReSharper disable once PossibleNullReferenceException
             if (string.IsNullOrEmpty(((Master.Default) Master).GoDaddyAccount.GoDaddyUsername))
             {

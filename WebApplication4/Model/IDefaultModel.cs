@@ -6,7 +6,9 @@ namespace WebApplication4.Model
     {
         void Logout();
         bool SubmitBug(Users user, string message);
+
         Users GetUser(string username);
         GoDaddyAccount GetGoDaddyAccount(Users user);
+        
     }
 }

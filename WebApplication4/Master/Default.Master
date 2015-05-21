@@ -42,10 +42,6 @@
             <div class="container">
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                     <Scripts>
-                        <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                        <%--Framework Scripts--%>
-
-                        <%--Site Scripts--%>
                     </Scripts>
                 </asp:ScriptManager>
                   <div class="pull-right">
@@ -54,7 +50,12 @@
                         <asp:LinkButton ID="LinkButton1" OnClick="Signout_Click" class="btn btn-xs btn-info" runat="server">Sign Out  &nbsp;<span class="glyphicon glyphicon-off"></span></asp:LinkButton>
                     </span>
                   </div>
-                
+                    <div style="display: inline">
+                        <a href="../Default.aspx">
+                            <img style="margin-top: -25px" src="img/textlogo.png" class="pull-left" alt=""/>
+                        </a>
+                    </div>
+                <!--Account Verification flash-->
                 <div id="accountverifictiondisplay" runat="server">
                     <canvas id="flash" width="20" height="40"></canvas>
                     <script>
@@ -66,9 +67,6 @@
                     </script>
 
                     <div style="display: inline">
-                        <a href="../Default.aspx">
-                            <img style="margin-top: -25px" src="img/textlogo.png" class="pull-left" alt=""/>
-                        </a>
                         <a id="verifyaccount" class="pull-left"  href="~/Default.aspx#settings" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
                         <a id="accountverified" runat="server" class="pull-left" data-toggle="tab">Account Verified: <i id="godaddydisplay" runat="server"> </i></a>
                         <asp:Label ID="AccountVerifiedLabel" class="pull-left" runat="server" />
@@ -77,31 +75,37 @@
                   <asp:Label ID="sentmessage" style="display:none" Class="alert alert-success" role="alert" ForeColor="Green" runat="server" />
 
             </div>
-
-            <asp:UpdateProgress ID="prgLoadingStatus" runat="server" DynamicLayout="true">
+            
+            <!--Loading Icon-->
+            <asp:UpdateProgress ID="prgLoadingStatus" runat="server">
             <ProgressTemplate>
                 <div id="overlay">
                     <div id="modalprogress">
-                        <div id="theprogress" style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.7;">
-                            <asp:Image ID="imgWaitIcon" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/img/loading2.gif" />
+                        <div id="theprogress" style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #fff0f5; opacity: 0.7;">
+                            <asp:Image style="position:relative; top:35%;" ID="imgWaitIcon" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/img/477.GIF" />
                         </div>
                     </div>
                 </div>
             </ProgressTemplate>
             </asp:UpdateProgress>
         
+            <!--Navigation Tabs-->
             <ul id="tabs" class="nav nav-tabs">
-                <li class="active"><a id="Resize" href="#search" onclick="CorrectCorner()">Search</a></li>
-                <li><a href="#multibidtab">Multi Bid</a></li>
-                <li><a href="#mybids">My Bids   <span runat="server" id="bidcount" class="badge">0</span></a></li>
-                <li><a href="#settings">Settings</a></li>
-                <li class="pull-right"><a href="#FAQ">FAQ</a></li>
-                <li class="pull-right"><a href="#Admin">Admin</a></li>
+                <li class="active"><a id="Resize" href="" onclick="CorrectCorner()">Search</a></li>
+                <li><a href="">Multi Bid</a></li>
+                <li><a href="">My Bids   <span runat="server" id="bidcount" class="badge">0</span></a></li>
+                <li><a href="">Settings</a></li>
+                <li class="pull-right"><a href="">FAQ</a></li>
+                <li class="pull-right"><a href="">Admin</a></li>
             </ul>
         </div>
              
         <div class="container body-content">
             <div id="pagecontentbackground">
+                <div id="pagedesc" class="pull-right">
+                    <asp:ContentPlaceHolder ID="PageTopDesc" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
                 <div id="pagecontent">
                     <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
                     </asp:ContentPlaceHolder>
@@ -134,19 +138,20 @@
             </div>
         </form>
 
-            <div class="container body-content">
-                <asp:ContentPlaceHolder ID="FooterHolder" runat="server">
-                </asp:ContentPlaceHolder>
-                <div class="navbar navbar-default navbar-fixed-bottom">
-                    <div class="container">
-                        <p class="navbar-text pull-left">
-                        <a id="SetBid" data-toggle="modal" data-id="<%#Eval("accountID")%>" href="#bugreport" class="btn btn-xs btn-info">Report a Bug</a>
-                        <span id="sent" runat="server"></span>
-                        </p>
-                        <!--<a href="" target="_blank" class="navbar-btn btn-danger btn pull-right">Auction Sniper WEB</a>-->
-                    </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="FooterHolder" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container">
+                    <p class="navbar-text pull-left">
+                    <a id="SetBid" data-toggle="modal" data-id="<%#Eval("accountID")%>" href="#bugreport" class="btn btn-xs btn-info">Report a Bug</a>
+                    <span id="sent" runat="server"></span>
+                    </p>
+                    <!--<a href="" target="_blank" class="navbar-btn btn-danger btn pull-right">Auction Sniper WEB</a>-->
                 </div>
             </div>
+        </div>
+
         </div>
     </div>
 </body>
