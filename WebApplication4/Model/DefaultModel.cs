@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using ASEntityFramework;
 using WebApplication4.LunchboxAPI;
@@ -48,6 +49,13 @@ namespace WebApplication4.Model
         public Users GetUser(string username)
         {
             return Ds.Users.First(x => x.Username == username);
+        }
+
+
+        public void SaveSettings(Users account)
+        {
+            Ds.Users.AddOrUpdate(account);
+            Ds.SaveChanges();
         }
 
         /// <summary>

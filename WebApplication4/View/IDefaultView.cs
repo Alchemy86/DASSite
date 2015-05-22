@@ -5,9 +5,9 @@ namespace WebApplication4.View
     public interface IDefaultView
     {
         Users UserAccount { get; }
-        GoDaddyAccount GoDaddyAccount { get; set; }
+        GoDaddyAccount GoDaddyAccount { get;}
+        GoDaddyActions GdHelper { get; }
         
-
         string Username { get;  }
         string BugMessage { get; set; }
 

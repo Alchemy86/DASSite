@@ -1,5 +1,4 @@
-﻿using ASEntityFramework;
-using AuctionSniperDLL.Business.Sites;
+﻿using AuctionSniperDLL.Business.Sites;
 using WebApplication4.Model;
 using WebApplication4.View;
 

@@ -29,6 +29,39 @@ namespace WebApplication4.Master
             }
         }
 
+
+        /// <summary>
+        /// Show/Hide account verification on header
+        /// </summary>
+        public bool DisplayAccountVerification
+        {
+            get
+            {
+                if (Session["DisplayAccountVerification"] == null)
+                {
+                    return true;
+                }
+                return (bool)Session["DisplayAccountVerification"];
+            }
+            set { Session["DisplayAccountVerification"] = value; }
+        }
+
+        /// <summary>
+        /// Helper contains all actions for Godaddy (site)
+        /// </summary>
+        public GoDaddyActions GdHelper
+        {
+            get
+            {
+                if (Session["GDHelper"] != null)
+                {
+                    return (GoDaddyActions)Session["GDHelper"];
+                }
+                Session["GDHelper"] = new GoDaddyActions();
+                return (GoDaddyActions)Session["GDHelper"];
+            }
+        }
+
         public string BugMessage
         {
             get
@@ -46,8 +79,15 @@ namespace WebApplication4.Master
         {
             get
             {
-                var presenter = new DefaultPresenter(this);
-                return presenter.GetUser();
+                return Presenter.GetUser();
+            }
+        }
+
+        public DefaultPresenter Presenter
+        {
+            get
+            {
+                return new DefaultPresenter(this);
             }
         }
 
@@ -55,12 +95,7 @@ namespace WebApplication4.Master
         {
             get
             {
-                var presenter = new DefaultPresenter(this);
-                return presenter.GetGoDaddyAccount(UserAccount);
-            }
-            set
-            {
-                throw new NotImplementedException();
+                return Presenter.GetGoDaddyAccount(UserAccount);
             }
         }
 
@@ -89,23 +124,9 @@ namespace WebApplication4.Master
             if ((!IsPostBack || BugMessage == bugtxtv.Text) && bugtxtv.Text != string.Empty) return;
             BugMessage = bugtxtv.Text;
             bugtxtv.Text = "";
-            var presenter = new DefaultPresenter(this);
-            presenter.SubmitBug();
+            Presenter.SubmitBug();
             ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "document.getElementById('bugtxtv').Value = '';", true);
         }
 
-
-        public bool DisplayAccountVerification
-        {
-            get
-            {
-                if (Session["DisplayAccountVerification"] == null)
-                {
-                    return true;
-                }
-                return (bool)Session["DisplayAccountVerification"];
-            }
-            set { Session["DisplayAccountVerification"] = value; }
-        }
     }
 }

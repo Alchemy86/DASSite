@@ -1,5 +1,4 @@
 ﻿using ASEntityFramework;
-using AuctionSniperDLL.Business.Sites;
 using WebApplication4.Model;
 using WebApplication4.View;
 
@@ -7,20 +6,23 @@ namespace WebApplication4.Presenter
 {
     public class DefaultPresenter
     {
-        protected IDefaultView View;
-        protected IDefaultModel Model;
-        protected GoDaddyAuctions2Cs GoDaddy;
+        private IDefaultView View;
+        private IDefaultModel Model;
 
         public DefaultPresenter(IDefaultView view)
         {
             View = view;
             Model = new DefaultModel();
-            GoDaddy = new GoDaddyAuctions2Cs();
         }
 
         public Users GetUser()
         {
             return Model.GetUser(View.Username);
+        }
+            
+        public GoDaddyActions GdHelper()
+        {
+            return View.GdHelper;
         }
 
         public GoDaddyAccount GetGoDaddyAccount(Users user)
@@ -33,9 +35,15 @@ namespace WebApplication4.Presenter
             return Model.SubmitBug(View.UserAccount, View.BugMessage);
         }
 
-        public bool ValidateGodaddy(GoDaddyAccount account)
+        public void SaveSettings(Users user)
         {
-            return GoDaddy.Login(account.GoDaddyUsername, account.GoDaddyPassword);
+            Model.SaveSettings(user);
+        }
+
+        public bool ValidateGodaddy(string username = null, string password = null)
+        {
+            return View.GdHelper.ValidateCredentials(username ?? View.GoDaddyAccount.GoDaddyUsername, 
+                password ?? View.GoDaddyAccount.GoDaddyPassword, true);
         }
 
     }

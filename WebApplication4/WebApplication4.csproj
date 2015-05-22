@@ -106,10 +106,9 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
-    <Content Include="img\loading.gif" />
+    <Content Include="Settings.aspx" />
     <Content Include="Setup.aspx" />
     <Content Include="OldDefault.aspx" />
-    <Content Include="img\loading2.gif" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
@@ -121,6 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\AppConfig.cs" />
+    <Compile Include="App_Code\IGoDaddyActions.cs" />
+    <Compile Include="App_Code\GoDaddyActions.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,9 +132,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\ISettingsModel.cs" />
     <Compile Include="Model\ISetupModel.cs" />
+    <Compile Include="Model\SettingsModel.cs" />
     <Compile Include="Model\SetupModel.cs" />
+    <Compile Include="Presenter\SettingsPresenter.cs" />
     <Compile Include="Presenter\SetupPresenter.cs" />
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Setup.aspx.cs">
       <DependentUpon>Setup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -178,6 +189,7 @@
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="View\IDefaultView.cs" />
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\ISettingsView.cs" />
     <Compile Include="View\ISetupView.cs" />
     <Compile Include="Web References\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

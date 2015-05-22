@@ -57,17 +57,18 @@
                     </div>
                 <!--Account Verification flash-->
                 <div id="accountverifictiondisplay" runat="server">
-                    <canvas id="flash" width="20" height="40"></canvas>
-                    <script>
-                        var canvas = document.getElementById("flash");
-                        var context = canvas.getContext("2d");
-                        context.arc(10, 10, 10, 0, Math.PI * 2, false);
-                        context.fillStyle = '#B00000';
-                        context.fill();
-                    </script>
-
                     <div style="display: inline">
-                        <a id="verifyaccount" class="pull-left"  href="~/Default.aspx#settings" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
+                        <div runat="server" id="verifyaccount">
+                            <a class="pull-left"  href="Settings.aspx" data-toggle="tab" runat="server">Verify Account &nbsp;</a>
+                            <canvas id="flash" width="20" height="40"></canvas>
+                            <script>
+                                var canvas = document.getElementById("flash");
+                                var context = canvas.getContext("2d");
+                                context.arc(10, 10, 10, 0, Math.PI * 2, false);
+                                context.fillStyle = '#B00000';
+                                context.fill();
+                            </script>
+                        </div>
                         <a id="accountverified" runat="server" class="pull-left" data-toggle="tab">Account Verified: <i id="godaddydisplay" runat="server"> </i></a>
                         <asp:Label ID="AccountVerifiedLabel" class="pull-left" runat="server" />
                     </div>
@@ -81,7 +82,7 @@
             <ProgressTemplate>
                 <div id="overlay">
                     <div id="modalprogress">
-                        <div id="theprogress" style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #fff0f5; opacity: 0.7;">
+                        <div id="theprogress" style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #fff0f5; -ms-opacity: 0.7; opacity: 0.7;">
                             <asp:Image style="position:relative; top:35%;" ID="imgWaitIcon" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/img/477.GIF" />
                         </div>
                     </div>
@@ -91,13 +92,14 @@
         
             <!--Navigation Tabs-->
             <ul id="tabs" class="nav nav-tabs">
-                <li class="active"><a id="Resize" href="" onclick="CorrectCorner()">Search</a></li>
-                <li><a href="">Multi Bid</a></li>
-                <li><a href="">My Bids   <span runat="server" id="bidcount" class="badge">0</span></a></li>
-                <li><a href="">Settings</a></li>
-                <li class="pull-right"><a href="">FAQ</a></li>
-                <li class="pull-right"><a href="">Admin</a></li>
+                <li id="menu_search"><a id="Resize" href="Search.aspx" onclick="CorrectCorner()">Search</a></li>
+                <li id="menu_multibid"><a href="Multibid.aspx">Multi Bid</a></li>
+                <li id="menu_mybids"><a href="Bids.aspx">My Bids   <span runat="server" id="bidcount" class="badge">0</span></a></li>
+                <li id="menu_settings"><a href="Settings.aspx">Settings</a></li>
+                <li id="menu_faq" class="pull-right"><a href="Faq.aspx">FAQ</a></li>
+                <li id="menu_admin" class="pull-right"><a href="Admin.aspx">Admin</a></li>
             </ul>
+
         </div>
              
         <div class="container body-content">
@@ -122,7 +124,7 @@
                         </div> 
                         <div class="modal-body">
                             <div class="form-group">
-                            <label for="inputbid" class="sr-only">Description</label>
+                            <label class="sr-only">Description</label>
                                 <asp:TextBox  id="bugtxtv"  onkeyDown="checkTextAreaMaxLength(this,event,'500');" class="span12" rows="10" Columns="120" placeholder="Report your issue" TextMode="MultiLine" runat="server" type="text" width="100%" height="100%" MaxLength="500" required autofocus>
                                 </asp:TextBox>
                             </div>
