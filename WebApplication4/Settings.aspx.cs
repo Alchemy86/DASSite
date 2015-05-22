@@ -15,11 +15,9 @@ namespace WebApplication4
 
         private void SetupControls()
         {
-            if (!IsPostBack)
-            {
-                receiveEmails.Checked = DefaultView.UserAccount.ReceiveEmails;
-                GodaddyAccount.Text = DefaultView.GoDaddyAccount.GoDaddyUsername;
-            }
+            if (IsPostBack) return;
+            receiveEmails.Checked = DefaultPresenter.View.UserAccount.ReceiveEmails;
+            GodaddyAccount.Text = DefaultPresenter.View.GoDaddyAccount.GoDaddyUsername;
         }
 
         protected void Verify_click(object sender, EventArgs e)
@@ -37,8 +35,13 @@ namespace WebApplication4
 
             if (DefaultPresenter.ValidateGodaddy(GoDaddyUsername, GoDaddyPassword))
             {
-                DefaultView.DisplayAccountVerification = true;
-                Response.Redirect("Default.aspx");
+                var account = DefaultPresenter.View.GoDaddyAccount;
+                account.GoDaddyPassword = GoDaddyPassword;
+                account.GoDaddyUsername = GoDaddyUsername;
+                account.Verified = true;
+                DefaultPresenter.SaveGoDaddyAccount(account);
+                const string moo = "$('#MainContentHolder_emailmessage').attr('class', 'alert alert-success pull-right');$('#MainContentHolder_emailmessage').text('Account verified and updated');$('#MainContentHolder_emailmessage').fadeIn(500).delay(5000).fadeOut('slow'); ";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "fadeit", moo, true);
             }
             else
             {
@@ -54,10 +57,10 @@ namespace WebApplication4
 
         public bool ReceiveEmails
         {
-            get { return DefaultView.UserAccount.ReceiveEmails; }
+            get { return DefaultPresenter.View.UserAccount.ReceiveEmails; }
             set
             {
-                var account = DefaultView.UserAccount;
+                var account = DefaultPresenter.View.UserAccount;
                 account.ReceiveEmails = value;
                 DefaultPresenter.SaveSettings(account);
                 emailmessage.InnerText = "Settings Saved";
@@ -65,11 +68,6 @@ namespace WebApplication4
                 const string moo = "$('#MainContentHolder_emailmessage').fadeIn(300).delay(1000).fadeOut('slow'); ";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "fadeit", moo, true);
             }
-        }
-
-        public IDefaultView DefaultView
-        {
-            get { return (Master.Default)Master; }
         }
 
         public string GoDaddyUsername
@@ -85,6 +83,19 @@ namespace WebApplication4
         public DefaultPresenter DefaultPresenter
         {
             get { return ((Master.Default) Master).Presenter; }
+        }
+
+        public SettingsPresenter Presenter
+        {
+            get
+            {
+                if (Session["SettingsPresenter"] != null)
+                {
+                    return (SettingsPresenter) Session["SettingsPresenter"];
+                }
+                Session["SettingsPresenter"] = new SettingsPresenter(this);
+                return (SettingsPresenter)Session["SettingsPresenter"];
+            }
         }
     }
 }

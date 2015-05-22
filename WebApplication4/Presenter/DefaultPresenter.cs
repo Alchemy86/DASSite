@@ -6,7 +6,7 @@ namespace WebApplication4.Presenter
 {
     public class DefaultPresenter
     {
-        private IDefaultView View;
+        public IDefaultView View;
         private IDefaultModel Model;
 
         public DefaultPresenter(IDefaultView view)
@@ -38,6 +38,11 @@ namespace WebApplication4.Presenter
         public void SaveSettings(Users user)
         {
             Model.SaveSettings(user);
+        }
+
+        public void SaveGoDaddyAccount(GoDaddyAccount account)
+        {
+            Model.SaveGodaddyAccount(account);
         }
 
         public bool ValidateGodaddy(string username = null, string password = null)

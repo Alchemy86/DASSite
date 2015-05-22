@@ -1,6 +1,4 @@
-﻿using System.Data.Entity.Migrations;
-using System.Linq;
-using ASEntityFramework;
+﻿using ASEntityFramework;
 
 namespace WebApplication4.Model
 {

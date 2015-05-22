@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using System.Web.UI;
 using WebApplication4.Presenter;
 using WebApplication4.View;

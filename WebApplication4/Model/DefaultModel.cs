@@ -51,10 +51,15 @@ namespace WebApplication4.Model
             return Ds.Users.First(x => x.Username == username);
         }
 
-
         public void SaveSettings(Users account)
         {
             Ds.Users.AddOrUpdate(account);
+            Ds.SaveChanges();
+        }
+
+        public void SaveGodaddyAccount(GoDaddyAccount account)
+        {
+            Ds.GoDaddyAccount.AddOrUpdate(account);
             Ds.SaveChanges();
         }
 
