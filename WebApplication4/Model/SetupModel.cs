@@ -20,7 +20,6 @@ namespace WebApplication4.Model
             account.GoDaddyAccount.Clear();
         }
 
-
         public void Save(Users user)
         {
             using (var ds = new ASEntities())

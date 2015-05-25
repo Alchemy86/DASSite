@@ -109,6 +109,7 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
+    <Content Include="Multibid.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="Setup.aspx" />
@@ -130,7 +131,9 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\AdvancedMenuBuilder.cs" />
     <Compile Include="App_Code\AppConfig.cs" />
+    <Compile Include="App_Code\IAdvancedMenuBuilder.cs" />
     <Compile Include="App_Code\IGoDaddyActions.cs" />
     <Compile Include="App_Code\GoDaddyActions.cs" />
     <Compile Include="Default.aspx.cs">
@@ -152,8 +155,17 @@
     </Compile>
     <Compile Include="Model\ISettingsModel.cs" />
     <Compile Include="Model\ISetupModel.cs" />
+    <Compile Include="Model\MultibidModel.cs" />
     <Compile Include="Model\SettingsModel.cs" />
     <Compile Include="Model\SetupModel.cs" />
+    <Compile Include="Multibid.aspx.cs">
+      <DependentUpon>Multibid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Multibid.aspx.designer.cs">
+      <DependentUpon>Multibid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presenter\MultibidPresenter.cs" />
     <Compile Include="Presenter\SettingsPresenter.cs" />
     <Compile Include="Presenter\SetupPresenter.cs" />
     <Compile Include="Search.aspx.cs">
@@ -214,6 +226,8 @@
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="View\IDefaultView.cs" />
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\IMultibidView.cs" />
+    <Compile Include="View\ISearchView.cs" />
     <Compile Include="View\ISettingsView.cs" />
     <Compile Include="View\ISetupView.cs" />
     <Compile Include="Web References\AssemblyInfo.cs" />

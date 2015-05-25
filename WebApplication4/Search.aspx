@@ -27,18 +27,12 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContentHolder" runat="server">
     
-     <div class ="row">
-        <div class="col-md-4">
-             
-        </div>
-         <div class="col-md-4">
-             moo
-        </div>
-         <div class="col-md-4">
-             
-        </div>
+    <div>
+     <div class="container" id="slidermenuholder" runat="server" style="margin-top: 20px">
+        
      </div>
-   
+    
+    <br/>
     
     <div class="col-md-12">
         <asp:Panel ID="pnlSearch" class="navbar navbar-default" runat="server" DefaultButton="btnSearch" >                                   
@@ -72,24 +66,23 @@
                                 
     </asp:Panel>
     </div>
+
+    </div>
  
     
     
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="FooterHolder" runat="server">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js" ></script>
     <script src="js/jQAllRangeSliders-min.js"></script>
     <script src="js/JQSlierCustomConfig.js"></script>
-    <script type='text/javascript'>
-        
-            $("#PRSilder").editRangeSlider('resize');
-            $("#CFSilder").editRangeSlider('resize');
-            $("#DomainAge").editRangeSlider('resize');
-            $("#DomainPrice").editRangeSlider('resize');
-            $("#MABacklinks").editRangeSlider('resize');
-            $("#MajesticIPS").editRangeSlider('resize');
-            $("#MOZDA").editRangeSlider('resize');
-            $("#MOZPA").editRangeSlider('resize');
-            $("#MATrustFlow").editRangeSlider('resize');
-        
+    <script>
+        //<!--
+        $("#slider_pagerank").editRangeSlider();
+        $("#slider2").editRangeSlider();
+        $("#slider3").editRangeSlider();
+        $("#slider4").editRangeSlider();
+        //-->
     </script>
 </asp:Content>

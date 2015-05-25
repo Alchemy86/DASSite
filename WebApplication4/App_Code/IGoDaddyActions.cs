@@ -1,6 +1,6 @@
 ﻿using AuctionSniperDLL.Business.Sites;
 
-namespace WebApplication4.App_Code
+namespace WebApplication4
 {
     public interface IGoDaddyActions
     {
