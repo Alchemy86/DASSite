@@ -10,6 +10,7 @@ namespace WebApplication4.View
         IQueryable<AuctionSearch> SearchResults { get; }
         MultibidPresenter Presenter { get; }
         string MultiBidText { get; }
+        int BidValue { get;  }
         void LoadSearchResults(LunchboxGridView grid);
         void SetupMultiBidLayout(LunchboxGridView grid);
     }

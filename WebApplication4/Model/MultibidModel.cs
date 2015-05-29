@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System.Data.Entity.Migrations;
+using System.Linq;
 using ASEntityFramework;
+using LunchboxSource.Business.SiteObject.GoDaddy;
 
 namespace WebApplication4.Model
 {
@@ -25,6 +27,24 @@ namespace WebApplication4.Model
                 item.AccountID = account.AccountID;
             }
             Ds.AuctionSearch.AddRange(results);
+            Ds.SaveChanges();
+        }
+
+        public void AddOrUpdateBid(Auctions auction)
+        {
+            Ds.Auctions.AddOrUpdate(auction);
+            Ds.SaveChanges();
+        }
+
+        public void AddAuctionHistory(AuctionHistory item)
+        {
+            Ds.AuctionHistory.AddOrUpdate(item);
+            Ds.SaveChanges();
+        }
+
+        public void AddAlert(Alerts item)
+        {
+            Ds.Alerts.AddOrUpdate(item);
             Ds.SaveChanges();
         }
 

@@ -70,10 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="Bids.aspx" />
     <Content Include="css\bootstrap-switch.css" />
     <Content Include="css\classic.css" />
     <Content Include="css\highlight.css" />
     <Content Include="css\iThing.css" />
+    <Content Include="css\Multibid.css" />
     <Content Include="css\Search.css" />
     <Content Include="css\Setup.css" />
     <Content Include="css\Signin.css" />
@@ -136,6 +138,13 @@
     <Compile Include="App_Code\IAdvancedMenuBuilder.cs" />
     <Compile Include="App_Code\IGoDaddyActions.cs" />
     <Compile Include="App_Code\GoDaddyActions.cs" />
+    <Compile Include="Bids.aspx.cs">
+      <DependentUpon>Bids.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bids.aspx.designer.cs">
+      <DependentUpon>Bids.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -48,6 +48,9 @@ namespace WebApplication4
         protected void gvAgency_Sorting(object sender, GridViewSortEventArgs e)
         {
             LunchboxGridView4.Order(SearchResults.AsQueryable(), e.SortExpression);
+            hiddenmulti.Style.Clear();
+            masssubmit.Style.Clear();
+            reset.Style.Clear();
         }
 
         protected void GenerateMultiBids(object sender, EventArgs e)
@@ -65,7 +68,8 @@ namespace WebApplication4
 
         protected void SubmitMultiBids(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Presenter.GenerateBids(LunchboxGridView4, BidValue);
+            Response.Redirect("Bids.aspx");
         }
 
         public void LoadSearchResults(LunchboxGridView grid)
@@ -104,6 +108,12 @@ namespace WebApplication4
         public string MultiBidText
         {
             get { return TextBox1.Text; }
+        }
+
+
+        public int BidValue
+        {
+            get { return int.Parse(fullApplyvalue.Value ?? "0"); }
         }
     }
 }

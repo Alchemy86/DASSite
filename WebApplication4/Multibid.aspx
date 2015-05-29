@@ -3,6 +3,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadHolder" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //called when key is pressed in textbox
+            $(".fullApplyvalue").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            $("#bidvalue").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageTopDesc" runat="server">
 </asp:Content>
@@ -64,15 +85,17 @@
                 </div>
                             
                 <div id="masssubmit" runat="server" style="display: none">
-                    <asp:Panel ID="Panel2" runat="server">
+                    <div class="container">
+                        <asp:Panel ID="Panel2" runat="server">
                             
-                        <div class="form-group" id="divSubmitMultibids"  runat="server" width="100%">
-                            <input id="fullApplyvalue" placeholder="Amount to Bid on all" min="1" type="text" runat="server" />
-                            <asp:LinkButton ID="LinkButton6" OnClick="SubmitMultiBids" runat="server" class="btn btn-default">Submit Bids</asp:LinkButton>
-                            This amount will be set as you maximum value for each of the above auctions that dont have their own value set.
-                        </div>
+                            <div class="form-group" id="divSubmitMultibids"  runat="server" width="100%">
+                                <input id="fullApplyvalue" ClientIDMode="Static" placeholder="Amount to Bid on all" min="1" type="text" runat="server" /><span id="errmsg"></span>
+                                <asp:LinkButton ID="LinkButton6" OnClick="SubmitMultiBids" runat="server" class="btn btn-default">Submit Bids</asp:LinkButton>
+                                This amount will be set as you maximum value for each of the above auctions that dont have their own value set.
+                            </div>
 
-                    </asp:Panel>
+                        </asp:Panel>
+                    </div>
                 </div>
 
             </ContentTemplate>
