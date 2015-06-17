@@ -30,6 +30,11 @@ namespace WebApplication4.Presenter
             return Model.GetGoDaddyAccount(user);
         }
 
+        public string GetMyBidCount()
+        {
+            return Model.GetMyBidCount(View.GoDaddyAccount);
+        }
+
         public bool SubmitBug()
         {
             return Model.SubmitBug(View.UserAccount, View.BugMessage);

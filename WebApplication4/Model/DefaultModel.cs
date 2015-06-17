@@ -73,5 +73,9 @@ namespace WebApplication4.Model
             return user.GoDaddyAccount.FirstOrDefault() ?? new GoDaddyAccount();
         }
 
+        public string GetMyBidCount(GoDaddyAccount account)
+        {
+            return Ds.Auctions.Where(x => x.AccountID == account.AccountID).ToList().Count.ToString();
+        }
     }
 }

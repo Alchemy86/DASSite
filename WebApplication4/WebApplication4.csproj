@@ -162,6 +162,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\BidsModel.cs" />
+    <Compile Include="Model\IBidsModel.cs" />
     <Compile Include="Model\ISettingsModel.cs" />
     <Compile Include="Model\ISetupModel.cs" />
     <Compile Include="Model\MultibidModel.cs" />
@@ -174,6 +176,7 @@
     <Compile Include="Multibid.aspx.designer.cs">
       <DependentUpon>Multibid.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presenter\BidsPresenter.cs" />
     <Compile Include="Presenter\MultibidPresenter.cs" />
     <Compile Include="Presenter\SettingsPresenter.cs" />
     <Compile Include="Presenter\SetupPresenter.cs" />
@@ -233,6 +236,7 @@
     </Compile>
     <Compile Include="Presenter\DefaultPresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
+    <Compile Include="View\IBidsView.cs" />
     <Compile Include="View\IDefaultView.cs" />
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IMultibidView.cs" />

@@ -11,6 +11,7 @@ namespace WebApplication4.Model
 
         Users GetUser(string username);
         GoDaddyAccount GetGoDaddyAccount(Users user);
-        
+        string GetMyBidCount(GoDaddyAccount account);
+
     }
 }

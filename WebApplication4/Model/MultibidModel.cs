@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity.Migrations;
 using System.Linq;
 using ASEntityFramework;
-using LunchboxSource.Business.SiteObject.GoDaddy;
 
 namespace WebApplication4.Model
 {

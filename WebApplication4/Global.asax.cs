@@ -37,7 +37,8 @@ namespace WebApplication4
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+            Exception exception = Server.GetLastError();
+            System.Diagnostics.Debug.WriteLine(exception);
         }
 
         protected void Session_End(object sender, EventArgs e)

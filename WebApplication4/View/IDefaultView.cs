@@ -13,5 +13,6 @@ namespace WebApplication4.View
 
         bool AccountVerified { get; }
         bool DisplayAccountVerification { get; set; }
+        string BidCount { get; }
     }
 }

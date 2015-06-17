@@ -18,6 +18,12 @@ html, body
     
 }
 
+#bidcontainer {
+
+    max-height: 360px;
+    overflow-x: scroll;
+}
+
 #pagedesc {
     margin-bottom: 10px;
     padding-top: 5px;

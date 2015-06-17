@@ -27,6 +27,7 @@ namespace WebApplication4.Master
             {
                 accountverifictiondisplay.Style.Add("display","none");
             }
+            bidcount.InnerText = BidCount;
         }
 
 
@@ -89,6 +90,11 @@ namespace WebApplication4.Master
             {
                 return new DefaultPresenter(this);
             }
+        }
+
+        public string BidCount
+        {
+            get { return Presenter.GetMyBidCount(); }
         }
 
         public GoDaddyAccount GoDaddyAccount
