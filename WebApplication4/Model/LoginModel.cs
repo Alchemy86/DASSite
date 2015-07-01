@@ -45,7 +45,7 @@ namespace WebApplication4.Model
                 account.AccessLevel = 
                     int.Parse(accessLevel.Substring(accessLevel.IndexOf("optimizemember_level", StringComparison.Ordinal), 1));
             }
-
+            account.Password = password;
             Ds.Users.AddOrUpdate(account);
             Ds.SaveChanges();
 

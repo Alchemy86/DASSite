@@ -18,9 +18,17 @@ html, body
     
 }
 
+#bidtolow {
+    background-color: #F2DEDE;
+}
+
+#bidfine {
+    background-color: #D9EDF7;
+}
+
 #bidcontainer {
 
-    max-height: 360px;
+    max-height: 320px;
     overflow-x: scroll;
 }
 
@@ -84,12 +92,14 @@ html, body
 
 
 .bidtolow {
-    background-color: #990000;
-    color: #ffffff;
+    background-color: #F2DEDE;
+    color: black;
+    text-align: center;
 }
 .bidfine {
-    background-color: #008000;
-    color: #ffffff;
+    background-color: #D9EDF7;
+    color: black;
+    text-align: center;
 }
 
 .page-header {

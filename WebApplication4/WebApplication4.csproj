@@ -51,6 +51,7 @@
       <HintPath>..\..\..\..\Lunchbox\LunchboxCode\LunchboxSource\bin\Release\LunchboxSource.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -236,6 +237,7 @@
     </Compile>
     <Compile Include="Presenter\DefaultPresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
+    <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IBidsView.cs" />
     <Compile Include="View\IDefaultView.cs" />
     <Compile Include="View\ILoginView.cs" />

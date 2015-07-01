@@ -33,5 +33,10 @@ namespace WebApplication4.Presenter
         {
             return Model.GetAuctions();
         }
+
+        public IQueryable<AuctionHistoryView> LoadAuctionHistory(Auctions auction)
+        {
+            return Model.GetAuctionHistory(auction);
+        }
     }
 }
