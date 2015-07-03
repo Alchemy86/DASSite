@@ -88,7 +88,12 @@ html, body
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
 
-
+.domaincheckbox {
+    padding: 4px;
+    display:inline;
+    overflow: hidden;
+    *overflow: hidden;
+}
 
 
 .bidtolow {
