@@ -7,6 +7,7 @@ namespace WebApplication4.View
         Users UserAccount { get; }
         GoDaddyAccount GoDaddyAccount { get;}
         GoDaddyActions GdHelper { get; }
+        ASEntities Ds { get; }
         
         string Username { get;  }
         string BugMessage { get; set; }

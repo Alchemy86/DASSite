@@ -139,6 +139,15 @@ namespace WebApplication4.Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl bidcount;
         
         /// <summary>
+        /// menu_admin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menu_admin;
+        
+        /// <summary>
         /// PageTopDesc control.
         /// </summary>
         /// <remarks>

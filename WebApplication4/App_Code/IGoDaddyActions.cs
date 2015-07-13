@@ -1,4 +1,6 @@
-﻿using AuctionSniperDLL.Business.Sites;
+﻿using System.Linq;
+using ASEntityFramework;
+using AuctionSniperDLL.Business.Sites;
 
 namespace WebApplication4
 {
@@ -6,5 +8,7 @@ namespace WebApplication4
     {
         GoDaddyAuctions2Cs GoDaddyApi { get; }
         bool ValidateCredentials(string username, string password, bool tryonce);
+        IQueryable<AuctionSearch> Search(string searchText, int numerofresults);
+        IQueryable<AuctionSearch> ListLastSearch();
     }
 }

@@ -26,7 +26,7 @@ namespace WebApplication4
             if (app.Context.Request.Url.LocalPath.EndsWith("/"))
             {
                 app.Context.RewritePath(
-                         string.Concat(app.Context.Request.Url.LocalPath, "Default.aspx"));
+                         string.Concat(app.Context.Request.Url.LocalPath, "Bids.aspx"));
             }
         }
 

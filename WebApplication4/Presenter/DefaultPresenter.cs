@@ -8,11 +8,13 @@ namespace WebApplication4.Presenter
     {
         public IDefaultView View;
         private IDefaultModel Model;
+        public IGoDaddyActions GoDaddyActions;
 
         public DefaultPresenter(IDefaultView view)
         {
             View = view;
             Model = new DefaultModel();
+            GoDaddyActions = new GoDaddyActions(view);
         }
 
         public Users GetUser()

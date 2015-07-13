@@ -27,6 +27,10 @@ namespace WebApplication4.Master
             {
                 accountverifictiondisplay.Style.Add("display","none");
             }
+            if (UserAccount.AccessLevel != 10)
+            {
+                menu_admin.Style.Add("display", "none");
+            }
             bidcount.InnerText = BidCount;
         }
 
@@ -58,7 +62,7 @@ namespace WebApplication4.Master
                 {
                     return (GoDaddyActions)Session["GDHelper"];
                 }
-                Session["GDHelper"] = new GoDaddyActions();
+                Session["GDHelper"] = new GoDaddyActions(this);
                 return (GoDaddyActions)Session["GDHelper"];
             }
         }
@@ -134,5 +138,9 @@ namespace WebApplication4.Master
             ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "document.getElementById('bugtxtv').Value = '';", true);
         }
 
+        public ASEntities Ds
+        {
+            get { return new ASEntities(); }
+        }
     }
 }

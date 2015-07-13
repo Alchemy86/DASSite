@@ -13,7 +13,7 @@ namespace WebApplication4
             //This page has one purpose, add an account whe you have none so go back if you have one
             if (DefaultView.UserAccount.GoDaddyAccount.Any(x=>x.Verified))
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("~/BasicSearch.aspx");
             }
             DefaultView.DisplayAccountVerification = false;
         }
@@ -34,7 +34,7 @@ namespace WebApplication4
             if (Presenter.ValidateGodaddy(true))
             {
                 DefaultView.DisplayAccountVerification = true;
-                Response.Redirect("Default.aspx");
+                Response.Redirect("~/BasicSearch.aspx");
             }
             else
             {

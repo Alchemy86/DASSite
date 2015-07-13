@@ -78,7 +78,7 @@
                                 <div class="modal-content">
                                     <form class="form-inline" role="form">
                                         <div class="modal-header">
-                                            <h4>History<span class="glyphicon glyphicon-signal pull-right"></span></h4>
+                                            <h4>Historyd<span class="glyphicon glyphicon-signal pull-right"></span></h4>
                                             <h5>(Times are server based)</h5>
                                         </div> 
                                         <div class="modal-body">

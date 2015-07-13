@@ -5,24 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageTopDesc" runat="server">
-    Admin
+    Admin - Concept only : Disabled
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContentHolder" runat="server">
     <div class="col-md-12 col-md-offset-1">
-        <asp:Chart ID="Chart1" runat="server">
-            <Titles>
-                <asp:Title ShadowOffset="3" Name="Items" />
-            </Titles>
-            <Legends>
-                <asp:Legend Alignment="Center" Docking="Bottom" IsTextAutoFit="False" Name="Default" LegendStyle="Row" />
-            </Legends>
-            <Series>
-                <asp:Series Name="Default" />
-            </Series>
-            <ChartAreas>
-                <asp:ChartArea Name="ChartArea1" BorderWidth="0" />
-            </ChartAreas>
-        </asp:Chart>
+        
     </div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="FooterHolder" runat="server">

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="BasicSearch.aspx" />
     <Content Include="Bids.aspx" />
     <Content Include="css\bootstrap-switch.css" />
     <Content Include="css\classic.css" />
@@ -139,6 +140,13 @@
     <Compile Include="App_Code\IAdvancedMenuBuilder.cs" />
     <Compile Include="App_Code\IGoDaddyActions.cs" />
     <Compile Include="App_Code\GoDaddyActions.cs" />
+    <Compile Include="BasicSearch.aspx.cs">
+      <DependentUpon>BasicSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasicSearch.aspx.designer.cs">
+      <DependentUpon>BasicSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Bids.aspx.cs">
       <DependentUpon>Bids.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
