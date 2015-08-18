@@ -38,6 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ASEntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DASService\AuctionSniperDLL\ASEntityFramework\bin\Debug\ASEntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="AuctionSniperDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DASService\AuctionSniperDLL\AuctionSniperDLL\bin\Debug\AuctionSniperDLL.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
@@ -49,6 +57,10 @@
     <Reference Include="LunchboxSource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lunchbox\LunchboxCode\LunchboxSource\bin\Release\LunchboxSource.dll</HintPath>
+    </Reference>
+    <Reference Include="LunchboxWebControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LunchboxWebControls\bin\Debug\LunchboxWebControls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DataVisualization" />
@@ -301,20 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\DASService\AuctionSniperDLL\ASEntityFramework\ASEntityFramework.csproj">
-      <Project>{8c22dfdb-9d39-47c8-82ae-758663bf4990}</Project>
-      <Name>ASEntityFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DASService\AuctionSniperDLL\AuctionSniperDLL\AuctionSniperDLL.csproj">
-      <Project>{99972a52-4922-4dc6-a51c-3302b493e807}</Project>
-      <Name>AuctionSniperDLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LunchboxWebControls\LunchboxWebControls.csproj">
-      <Project>{b1a6b7f3-2a75-45bc-84dc-568209dfef8e}</Project>
-      <Name>LunchboxWebControls</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
