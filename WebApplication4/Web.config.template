@@ -1,0 +1,82 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WebApplication4.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+  <location path="LoginPage.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="css">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="img">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="js">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <connectionStrings>
+    <add name="ASEntities" connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost\DS;initial catalog=AuctionSniper;persist security info=True;user id=sa;password=Pr10r1tyF1x;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient"/>
+  </connectionStrings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5">
+      <assemblies>
+        <add assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      </assemblies>
+    </compilation>
+    <httpRuntime targetFramework="4.5"/>
+    <authentication mode="Forms">
+      <forms loginUrl="LoginPage.aspx" name=".ASPXFORMSAUTH"/>
+    </authentication>
+    <authorization>
+      <deny users="?"/>
+    </authorization>
+  </system.web>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework"/>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"/>
+    </providers>
+  </entityFramework>
+  <appSettings>
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="None"/>
+    <add key="ChartImageHandler" value="storage=file;timeout=20;" />
+  </appSettings>
+  <applicationSettings>
+    <WebApplication4.Properties.Settings>
+      <setting name="WebApplication4_LunchboxAPI_LunchboxCode_API" serializeAs="String">
+        <value>http://domainauctionsniper.com/service/php/service.php</value>
+      </setting>
+    </WebApplication4.Properties.Settings>
+  </applicationSettings>
+  <system.webServer>
+
+    <handlers>
+      <add name="ChartImg" verb="*" path="ChartImg.axd"  type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"  />
+    </handlers>
+  </system.webServer>
+</configuration>

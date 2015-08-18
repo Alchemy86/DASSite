@@ -9,6 +9,10 @@ namespace WebApplication4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(((Master.Default)Master).GoDaddyAccount.GoDaddyUsername))
+            {
+                Response.Redirect("Setup.aspx");
+            }
             ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "document.getElementById('menu_settings').className  = 'active';", true);
             SetupControls();
         }

@@ -40,10 +40,9 @@ namespace WebApplication4.Model
             {
                 account.AccessLevel = 10;
             }
-            else if (accessLevel.Contains("optimizemember_level"))
+            else
             {
-                account.AccessLevel = 
-                    int.Parse(accessLevel.Substring(accessLevel.IndexOf("optimizemember_level", StringComparison.Ordinal), 1));
+                account.AccessLevel = 1;
             }
             account.Password = password;
             Ds.Users.AddOrUpdate(account);
