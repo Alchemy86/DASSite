@@ -1,0 +1,5 @@
+C:\git\DAS\DASSite\LunchboxWebControls\bin\Debug\LunchboxWebControls.dll
+C:\git\DAS\DASSite\LunchboxWebControls\bin\Debug\LunchboxWebControls.pdb
+C:\git\DAS\DASSite\LunchboxWebControls\obj\Debug\LunchboxWebControls.csprojResolveAssemblyReference.cache
+C:\git\DAS\DASSite\LunchboxWebControls\obj\Debug\LunchboxWebControls.dll
+C:\git\DAS\DASSite\LunchboxWebControls\obj\Debug\LunchboxWebControls.pdb
