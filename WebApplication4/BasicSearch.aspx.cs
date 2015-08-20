@@ -118,7 +118,7 @@ namespace WebApplication4
                 {
                     HistoryID = Guid.NewGuid(),
                     Text = "Auction Added",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DefaultView.GetPacificTime,
                     AuctionLink = auction.AuctionID
                 };
                 ds.AuctionHistory.Add(item);

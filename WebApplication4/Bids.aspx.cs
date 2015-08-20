@@ -71,6 +71,11 @@ namespace WebApplication4
             //}
         }
 
+        public IDefaultView DefaultView
+        {
+            get { return (Master.Default)Master; }
+        }
+
         protected void grdViewCustomers_OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType != DataControlRowType.DataRow) return;
@@ -83,7 +88,7 @@ namespace WebApplication4
 
             var won = history.Any(x => x.Text == "Auction WON");
             var lost = history.Any(x => x.Text == "Auction LOST");
-            var now = DateTime.Now;
+            var now = DefaultView.GetPacificTime;
 
             if (won)
             {
@@ -152,7 +157,7 @@ namespace WebApplication4
 
         public void LoadAuctions()
         {
-            var currentDate = DateTime.Now;
+            var currentDate = DefaultView.GetPacificTime;
             LunchboxGridView2.DataSource = MyBids.Where(x=>x.EndDate > currentDate);
             LunchboxGridView2.DataBind();
             //Hide edit options

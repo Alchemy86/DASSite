@@ -1,4 +1,5 @@
-﻿using ASEntityFramework;
+﻿using System;
+using ASEntityFramework;
 
 namespace WebApplication4.View
 {
@@ -8,7 +9,8 @@ namespace WebApplication4.View
         GoDaddyAccount GoDaddyAccount { get;}
         GoDaddyActions GdHelper { get; }
         ASEntities Ds { get; }
-        
+        DateTime GetPacificTime { get; }
+
         string Username { get;  }
         string BugMessage { get; set; }
 

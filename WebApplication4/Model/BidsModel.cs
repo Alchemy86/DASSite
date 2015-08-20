@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using ASEntityFramework;
+using WebApplication4.View;
 
 namespace WebApplication4.Model
 {
@@ -8,9 +9,11 @@ namespace WebApplication4.Model
     {
         protected ASEntities Ds { get; private set; }
         private GoDaddyAccount Account;
+        private IDefaultView DefaultView;
 
-        public BidsModel(GoDaddyAccount account)
+        public BidsModel(GoDaddyAccount account, IDefaultView defaultView)
         {
+            DefaultView = defaultView;
             Ds = new ASEntities();
             Account = account;
         }
@@ -22,7 +25,7 @@ namespace WebApplication4.Model
 
         public IQueryable<Auctions> GetHistoricAuctions()
         {
-            var currentDate = DateTime.Now;
+            var currentDate = DefaultView.GetPacificTime;
             return Ds.Auctions.Where(x => x.AccountID == Account.AccountID && x.EndDate < currentDate).ToList().AsQueryable();
         }
             

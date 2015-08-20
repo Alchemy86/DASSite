@@ -101,6 +101,21 @@ namespace WebApplication4.Master
             get { return Presenter.GetMyBidCount(); }
         }
 
+        /// <summary>
+        /// Returns the Pacific time
+        /// </summary>
+        /// <returns></returns>
+        public DateTime GetPacificTime
+        {
+            get
+            {
+                var tzi = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+                var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzi);
+
+                return localDateTime;
+            }
+        }
+
         public GoDaddyAccount GoDaddyAccount
         {
             get

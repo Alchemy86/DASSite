@@ -71,7 +71,7 @@ namespace WebApplication4.Presenter
                 {
                     HistoryID = Guid.NewGuid(),
                     Text = "Auction Added",
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = DefaultView.GetPacificTime,
                     AuctionLink = auction.AuctionID
                 });
 
