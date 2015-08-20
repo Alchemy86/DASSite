@@ -95,3 +95,7 @@ C:\git\DASSite\WebApplication4\obj\Release\WebApplication4.csprojResolveAssembly
 C:\git\DASSite\WebApplication4\obj\Release\WebApplication4.dll
 C:\git\DASSite\WebApplication4\obj\Release\WebApplication4.pdb
 C:\git\DASSite\WebApplication4\obj\Release\WebApplication4.XmlSerializers.dll
+C:\git\DASSite\WebApplication4\bin\Twitterizer2.dll
+C:\git\DASSite\WebApplication4\bin\MySql.Data.dll
+C:\git\DASSite\WebApplication4\bin\LunchboxSource.pdb
+C:\git\DASSite\WebApplication4\bin\LunchboxSource.XmlSerializers.dll
