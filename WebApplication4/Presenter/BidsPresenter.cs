@@ -16,7 +16,7 @@ namespace WebApplication4.Presenter
         {
             View = view;
             DefaultView = defaultView;
-            Model = new BidsModel(DefaultView.GoDaddyAccount);
+            Model = new BidsModel(DefaultView.GoDaddyAccount, defaultView);
         }
 
         public void DeleteAuction(Guid auctionRef)
