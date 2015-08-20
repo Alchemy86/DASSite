@@ -118,7 +118,7 @@
                                 <span id="timer_<%# Container.DataItemIndex %>"
                                     class="timer" 
                                     data-start='<%#Eval("EndDate", "{0:M/dd/yyyy H:mm:ss}")%>'
-                                    data-currentTime='<%# GetPacificTime.ToString("M/dd/yyyy H:mm:ss") %>'></span>
+                                    data-currentTime='<%# DefaultView.GetPacificTime.ToString("M/dd/yyyy H:mm:ss") %>'></span>
                             </ItemTemplate>
                         </asp:TemplateField>
                         
