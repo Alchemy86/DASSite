@@ -658,8 +658,8 @@
                                             <ItemTemplate >
                                                 <span id="timer_<%# Container.DataItemIndex %>"
                                                   class="timer" 
-                                                  data-start='<%#Eval("EndDate", "{0:M/dd/yyyy H:mm:ss}")%>'
-                                                  data-currentTime='<%# DateTime.Now.ToString("M/dd/yyyy H:mm:ss") %>'></span>
+                                                  data-start='<%#Eval("EndDate", "{0:dd/M/yyyy H:mm:ss}")%>'
+                                                  data-currentTime='<%# DateTime.Now.ToString("dd/M/yyyy H:mm:ss") %>'></span>
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
