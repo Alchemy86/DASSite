@@ -100,10 +100,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\477.GIF" />
-    <Content Include="img\483.GIF" />
     <Content Include="img\500.GIF" />
     <Content Include="img\addv2.png" />
     <Content Include="img\backdrop.jpg" />
+    <Content Include="img\das-textlogo.png" />
     <Content Include="img\DAS_sun.png" />
     <Content Include="img\delete.png" />
     <Content Include="img\domain-auction-sniper-logo.png" />

@@ -45,6 +45,7 @@
             <asp:UpdatePanel ID="UpdatePanel5" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional" class="form-horizontal" >
                 <Triggers>        
                     <asp:AsyncPostBackTrigger ControlID="receiveEmails" EventName="CheckedChanged" />    
+                    <asp:AsyncPostBackTrigger ControlID="useAccountForSearch" EventName="CheckedChanged" />   
                 </Triggers>  
                 <ContentTemplate>
                     <div class="form-group" >
@@ -54,7 +55,24 @@
                             <label style="color: grey">  Get email alerts including warnings and auctions nearing their end</label>
                         </div>
                     </div>
+                    <div class="form-group" >
+                        <label class="col-sm-3 control-label" runat="server"><strong>Use account for searching:</strong></label>
+                        <div class="col-sm-8">
+                            <asp:CheckBox ID="useAccountForSearch" ClientIDMode="Static" AutoPostBack="True" runat="server" OnCheckedChanged="Update_UseAccount"></asp:CheckBox>
+                            <label style="color: grey">  Use your account for domain searchs(I.e. Enabled adult listed sites etc)</label>
+                        </div>
+                    </div>
                     <Label ID="emailmessage" style="display:none" Class="alert alert-success pull-right" role="alert" ForeColor="Green" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional" class="form-horizontal" >
+                <Triggers>        
+                    <asp:AsyncPostBackTrigger ControlID="receiveEmails" EventName="CheckedChanged" />    
+                </Triggers>  
+                <ContentTemplate>
+
+                    <Label ID="Label1" style="display:none" Class="alert alert-success pull-right" role="alert" ForeColor="Green" runat="server" />
                 </ContentTemplate>
             </asp:UpdatePanel>
                 

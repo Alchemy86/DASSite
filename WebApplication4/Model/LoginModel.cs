@@ -14,7 +14,7 @@ namespace WebApplication4.Model
         public LoginModel()
         {
             DasApi = new DomainAuctionSniperAPI();
-            Ds=new ASEntities();
+            Ds = new ASEntities();
         }
 
         /// <summary>

@@ -20,7 +20,7 @@
         <div class="login-container">
             <div class="container">
                 <div class="label1">
-                    <img src="img/domain-auction-sniper-logo.png" />
+                    <img style="margin-left: 5px" src="img/das-textlogo.png" />
                 </div>
               <form class="form-signin" role="form" runat="server">
                   <h2 class="form-signin-heading">Sign in to <br/><strong>Domain Auction Sniper</strong></h2>

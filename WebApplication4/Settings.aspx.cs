@@ -22,6 +22,7 @@ namespace WebApplication4
             if (IsPostBack) return;
             receiveEmails.Checked = DefaultPresenter.View.UserAccount.ReceiveEmails;
             GodaddyAccount.Text = DefaultPresenter.View.GoDaddyAccount.GoDaddyUsername;
+            useAccountForSearch.Checked = DefaultPresenter.View.UserAccount.UseAccountForSearch;
         }
 
         protected void Verify_click(object sender, EventArgs e)
@@ -59,6 +60,11 @@ namespace WebApplication4
             ReceiveEmails = receiveEmails.Checked;
         }
 
+        protected void Update_UseAccount(object sender, EventArgs e)
+        {
+            UseAccountForSearch = useAccountForSearch.Checked;
+        }
+
         public bool ReceiveEmails
         {
             get { return DefaultPresenter.View.UserAccount.ReceiveEmails; }
@@ -66,6 +72,21 @@ namespace WebApplication4
             {
                 var account = DefaultPresenter.View.UserAccount;
                 account.ReceiveEmails = value;
+                DefaultPresenter.SaveSettings(account);
+                emailmessage.InnerText = "Settings Saved";
+
+                const string moo = "$('#MainContentHolder_emailmessage').fadeIn(300).delay(1000).fadeOut('slow'); ";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "fadeit", moo, true);
+            }
+        }
+
+        public bool UseAccountForSearch
+        {
+            get { return DefaultPresenter.View.UserAccount.UseAccountForSearch; }
+            set
+            {
+                var account = DefaultPresenter.View.UserAccount;
+                account.UseAccountForSearch = value;
                 DefaultPresenter.SaveSettings(account);
                 emailmessage.InnerText = "Settings Saved";
 
