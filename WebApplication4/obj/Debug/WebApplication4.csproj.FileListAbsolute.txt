@@ -33,16 +33,12 @@ C:\git\DASSite\WebApplication4\bin\LunchboxWebControls.dll
 C:\git\DASSite\WebApplication4\bin\HtmlAgilityPack.dll
 C:\git\DASSite\WebApplication4\bin\Fizzler.dll
 C:\git\DASSite\WebApplication4\bin\DeathByCaptcha.dll
-C:\git\DASSite\WebApplication4\bin\Twitterizer2.dll
-C:\git\DASSite\WebApplication4\bin\MySql.Data.dll
 C:\git\DASSite\WebApplication4\bin\Newtonsoft.Json.dll
 C:\git\DASSite\WebApplication4\bin\ASEntityFramework.pdb
 C:\git\DASSite\WebApplication4\bin\AuctionSniperDLL.pdb
 C:\git\DASSite\WebApplication4\bin\EntityFramework.xml
 C:\git\DASSite\WebApplication4\bin\EntityFramework.SqlServer.xml
-C:\git\DASSite\WebApplication4\bin\LunchboxSource.pdb
 C:\git\DASSite\WebApplication4\bin\LunchboxWebControls.pdb
-C:\git\DASSite\WebApplication4\bin\LunchboxSource.XmlSerializers.dll
 C:\git\DASSite\WebApplication4\obj\Debug\WebApplication4.csprojResolveAssemblyReference.cache
 C:\git\DASSite\WebApplication4\obj\Debug\WebApplication4.dll
 C:\git\DASSite\WebApplication4\obj\Debug\WebApplication4.pdb

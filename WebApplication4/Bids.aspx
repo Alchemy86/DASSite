@@ -230,7 +230,8 @@
                         <asp:TemplateField HeaderText="" SortExpression="">
                             <ItemTemplate>
                                 <span class="pull-right">
-                                <asp:LinkButton id="lnkBtnDel" style="color: #ffffff; margin: 5px 0 5px 20px" CssClass="btn btn-xs btn-danger" runat="server" CommandName="DeleteRow" OnClientClick="return confirm('Are you sure you want to Delete this Record?');" CommandArgument='<%#Eval("AuctionID")%>'>Delete</asp:LinkButton>
+                                <asp:LinkButton id="recheckWin" style="color: #ffffff; margin: 5px 0 5px 20px" OnClientClick="return confirm('Check if auction was won?');" CommandArgument='<%#Eval("AuctionID")%>' CssClass="btn btn-xs btn-info" CommandName="Check" runat="server">Check</asp:LinkButton>
+                                <asp:LinkButton id="lnkBtnDel" style="color: #ffffff; margin: 5px 5px" CssClass="btn btn-xs btn-danger" runat="server" CommandName="DeleteRow" OnClientClick="return confirm('Are you sure you want to Delete this Record?');" CommandArgument='<%#Eval("AuctionID")%>'>Delete</asp:LinkButton>
                                 <a id="SetBid" data-toggle="modal" onclick="myFunction2('<%#Eval("AuctionID")%>')" data-id="<%#Eval("AuctionID")%>" href="#<%#Eval("AuctionID")%>" style="color: #ffffff; margin: 5px 5px " class="open-AddBookDialog btn btn-xs btn-primary">History</a> 
                             </span>
                                     </ItemTemplate>

@@ -38,5 +38,10 @@ namespace WebApplication4.Presenter
         {
             return Model.GetAuctionHistory(auction);
         }
+
+        public string GetDomain(Guid auctionRef)
+        {
+            return Model.GetDomain(auctionRef);
+        }
     }
 }

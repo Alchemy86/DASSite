@@ -18,6 +18,12 @@ namespace WebApplication4.Model
             Account = account;
         }
 
+        public string GetDomain(Guid auctionRef)
+        {
+            var domain = Ds.Auctions.First(x => x.AuctionID == auctionRef && x.AccountID == Account.AccountID).DomainName;
+            return domain;
+        }
+
         public IQueryable<Auctions> GetAuctions()
         {
             return Ds.Auctions.Where(x => x.AccountID == Account.AccountID).ToList().AsQueryable();

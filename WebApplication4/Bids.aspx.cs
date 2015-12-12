@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -30,7 +31,14 @@ namespace WebApplication4
                 ((GridViewRow)((LinkButton)e.CommandSource).NamingContainer).Style.Add("display", "none");
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "javascript:document.location.reload();", true);
             }
-            if (e.CommandName == "Update")
+            else if (e.CommandName == "Check")
+            {
+                var auctionRef = Guid.Parse(e.CommandArgument.ToString());
+                WinCheck(auctionRef, Presenter.GetDomain(auctionRef));
+                //((GridViewRow)((LinkButton)e.CommandSource).NamingContainer).Style.Add("display", "none");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "UpdateMsg", "javascript:document.location.reload();", true);
+            }
+            else if (e.CommandName == "Update")
             {
                 var auctionRef = Guid.Parse(e.CommandArgument.ToString());
                 GridViewRow row = ((GridViewRow)((LinkButton)e.CommandSource).NamingContainer);
@@ -205,5 +213,19 @@ namespace WebApplication4
         {
             
         }
+
+        public DefaultPresenter DefaultPresenter
+        {
+            get { return ((Master.Default)Master).Presenter; }
+        }
+
+        private void WinCheck(Guid auctionID, string domain)
+        {
+            if (DefaultPresenter.CheckIfWon(new Dictionary<Guid, string> { { auctionID, domain } }))
+            {
+                LoadAuctions();
+            }
+        }
+
     }
 }

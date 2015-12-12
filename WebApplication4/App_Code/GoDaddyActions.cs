@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Web.Management;
 using ASEntityFramework;
 using AuctionSniperDLL.Business.Sites;
 using WebApplication4.View;
@@ -8,9 +7,11 @@ namespace WebApplication4
 {
     public class GoDaddyActions : IGoDaddyActions
     {
+        private GoDaddyAuctions2Cs GodaddyAuctions;
+
         public GoDaddyAuctions2Cs GoDaddyApi
         {
-            get { return new GoDaddyAuctions2Cs(); }
+            get { return GodaddyAuctions; }
         }
 
         private IDefaultView DefaultView;
@@ -18,6 +19,7 @@ namespace WebApplication4
         public GoDaddyActions(IDefaultView defaultView)
         {
             DefaultView = defaultView;
+            GodaddyAuctions = new GoDaddyAuctions2Cs();
         }
 
         /// <summary>

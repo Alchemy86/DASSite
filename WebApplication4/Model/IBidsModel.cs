@@ -9,5 +9,6 @@ namespace WebApplication4.Model
         IQueryable<Auctions> GetAuctions();
         void DeleteAuction(Guid auctionRef);
         void UpdateAuctionBid(Guid auctionRef, string bidValue);
+        string GetDomain(Guid auctionRef);
     }
 }
