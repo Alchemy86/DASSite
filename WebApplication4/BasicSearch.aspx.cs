@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.UI;
@@ -73,6 +74,16 @@ namespace WebApplication4
             LunchboxGridView1.Order(SearchResults.AsQueryable(), e.SortExpression);
         }
 
+        public enum AlertType
+        {
+            [Description("Win Alert")]
+            Win,
+            [Description("1 Hour Alert")]
+            Reminder1Hour,
+            [Description("12 Hour Alert")]
+            Reminder12Hours
+        }
+
         protected void submitmybid(object sender, EventArgs e)
         {
             using (var ds = new ASEntities())
@@ -137,7 +148,8 @@ namespace WebApplication4
                     AuctionID = auction.AuctionID,
                     Custom = false,
                     Description = "12 Hour Alert",
-                    TriggerTime = auction.EndDate.AddHours(-12)
+                    TriggerTime = auction.EndDate.AddHours(-12),
+                    Type = 
                 };
                 ds.Alerts.Add(bidalert);
 
