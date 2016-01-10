@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ASEntityFramework;
 using AuctionSniperService.Business.Sites;
+using LunchboxSource.Business;
 using LunchboxWebControls;
 using WebApplication4.Presenter;
 using WebApplication4.View;
@@ -138,7 +139,8 @@ namespace WebApplication4
                     AuctionID = auction.AuctionID,
                     Custom = false,
                     Description = "WIN ALERT",
-                    TriggerTime = auction.EndDate.AddMinutes(5)
+                    TriggerTime = auction.EndDate.AddMinutes(5),
+                    Type = AlertType.Win.ToDescription()
                 };
                 ds.Alerts.Add(winalert);
 
@@ -149,7 +151,7 @@ namespace WebApplication4
                     Custom = false,
                     Description = "12 Hour Alert",
                     TriggerTime = auction.EndDate.AddHours(-12),
-                    Type = 
+                    Type = AlertType.Reminder12Hours.ToDescription()
                 };
                 ds.Alerts.Add(bidalert);
 
@@ -159,7 +161,8 @@ namespace WebApplication4
                     AuctionID = auction.AuctionID,
                     Custom = false,
                     Description = "1 Hour Alert",
-                    TriggerTime = auction.EndDate.AddHours(-1)
+                    TriggerTime = auction.EndDate.AddHours(-1),
+                    Type = AlertType.Reminder1Hour.ToDescription()
                 };
                 ds.Alerts.Add(bidalert2);
                 ds.SaveChanges();
