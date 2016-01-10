@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ASEntityFramework;
+using AuctionSniperDLL.Business.Sites;
 using AuctionSniperService.Business.Sites;
 using LunchboxSource.Business;
 using LunchboxWebControls;
@@ -97,7 +98,7 @@ namespace WebApplication4
                                 x.AccountID == DefaultView.GoDaddyAccount.AccountID &&
                                 x.AuctionRef == biddref);
 
-                var enddate = new GoDaddyAuctions().GetEndDate(biddref);
+                var enddate = new GoDaddyAuctions2Cs().GetEndDate(biddref);
                 var linkedRuid = Guid.NewGuid();
                 var auction = new Auctions
                 {
