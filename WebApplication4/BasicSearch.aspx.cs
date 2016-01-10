@@ -140,7 +140,7 @@ namespace WebApplication4
                     Custom = false,
                     Description = "WIN ALERT",
                     TriggerTime = auction.EndDate.AddMinutes(5),
-                    Type = AlertType.Win.ToDescription()
+                    Type = "WIN ALERT"
                 };
                 ds.Alerts.Add(winalert);
 
@@ -151,7 +151,7 @@ namespace WebApplication4
                     Custom = false,
                     Description = "12 Hour Alert",
                     TriggerTime = auction.EndDate.AddHours(-12),
-                    Type = AlertType.Reminder12Hours.ToDescription()
+                    Type = "12 Hour Alert"
                 };
                 ds.Alerts.Add(bidalert);
 
@@ -162,7 +162,7 @@ namespace WebApplication4
                     Custom = false,
                     Description = "1 Hour Alert",
                     TriggerTime = auction.EndDate.AddHours(-1),
-                    Type = AlertType.Reminder1Hour.ToDescription()
+                    Type = "1 Hour Alert"
                 };
                 ds.Alerts.Add(bidalert2);
                 ds.SaveChanges();

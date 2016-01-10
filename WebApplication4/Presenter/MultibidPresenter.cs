@@ -80,7 +80,8 @@ namespace WebApplication4.Presenter
                     AuctionID = auction.AuctionID,
                     Custom = false,
                     Description = "WIN ALERT",
-                    TriggerTime = auction.EndDate.AddMinutes(5)
+                    TriggerTime = auction.EndDate.AddMinutes(5),
+                    Type = "WIN ALERT"
                 });
 
                 Model.AddAlert(new Alerts
@@ -89,7 +90,8 @@ namespace WebApplication4.Presenter
                     AuctionID = auction.AuctionID,
                     Custom = false,
                     Description = "12 Hour Alert",
-                    TriggerTime = auction.EndDate.AddHours(-12)
+                    TriggerTime = auction.EndDate.AddHours(-12),
+                    Type = "12 Hour Alert"
                 });
 
                 Model.AddAlert(new Alerts
@@ -98,7 +100,8 @@ namespace WebApplication4.Presenter
                     AuctionID = auction.AuctionID,
                     Custom = false,
                     Description = "1 Hour Alert",
-                    TriggerTime = auction.EndDate.AddHours(-1)
+                    TriggerTime = auction.EndDate.AddHours(-1),
+                    Type = "1 Hour Alert"
                 });
             }
         }
