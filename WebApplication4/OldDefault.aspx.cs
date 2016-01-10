@@ -350,6 +350,7 @@ namespace WebApplication4
 
                             var winalert = new Alerts
                             {
+                                AlertID = Guid.NewGuid(),
                                 AuctionID = auction.AuctionID,
                                 Custom = false,
                                 Description = "WIN ALERT",
@@ -859,6 +860,7 @@ namespace WebApplication4
 
                         var winalert = new Alerts
                         {
+                            AlertID = Guid.NewGuid(),
                             AuctionID = auction.AuctionID,
                             Custom = false,
                             Description = "WIN ALERT",
