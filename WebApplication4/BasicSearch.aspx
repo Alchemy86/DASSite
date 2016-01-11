@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Default.Master" AutoEventWireup="true" CodeBehind="BasicSearch.aspx.cs" Inherits="WebApplication4.BasicSearch" %>
+﻿<%@ Page Title="" EnableEventValidation="false" ValidateRequest="false" Language="C#" MasterPageFile="~/Master/Default.Master" AutoEventWireup="true" CodeBehind="BasicSearch.aspx.cs" Inherits="WebApplication4.BasicSearch" %>
 <%@ Register TagPrefix="cc1" Namespace="LunchboxWebControls" Assembly="LunchboxWebControls" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadHolder" runat="server">
     <script type="text/javascript">
+        
         function CorrectCorner() {
             location.reload();
             document.getElementById("maincontent").setAttribute("border-top-left-radius", "0px");
@@ -38,7 +39,7 @@
                 <div class="container-fluid">
                 <div class="navbar-header">
                     <asp:TextBox ID="txtSearch" CssClass="navbar-btn" runat="server"></asp:TextBox>&nbsp;
-                    <asp:LinkButton ID="btnSearch" runat="server" OnClick="SearchClick" CssClass="navbar-btn" Text="Search"></asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="btnSearch" ClientIDMode="Static" runat="server" OnClick="SearchClick" CssClass="navbar-btn" Text="Search"></asp:LinkButton>&nbsp;
 
                     <asp:DropDownList ID="ddlTopResults" runat="server" CssClass="navbar-btn" AutoPostBack="true" >
                         <asp:ListItem Text="5" Value="5" />
@@ -57,7 +58,7 @@
                         <div class="table-responsive" style="margin-top: -15px">
                         <asp:UpdatePanel ID="SearchUpdate" runat="server">
                                 <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="btnSearch" EventName="Click" />
+                                <asp:AsyncPostBackTrigger  ControlID="btnSearch" EventName="Click" />
                             </Triggers>
                             <ContentTemplate>
                                 <div id="bidcontainer">
