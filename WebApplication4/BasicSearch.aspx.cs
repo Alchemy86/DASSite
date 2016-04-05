@@ -4,11 +4,11 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ASEntityFramework;
-using AuctionSniperDLL.Business.Sites;
-using AuctionSniperService.Business.Sites;
-using LunchboxSource.Business;
+using DAL;
+using DAS.Domain.Users;
+using GoDaddy;
 using LunchboxWebControls;
+using Ninject;
 using WebApplication4.Presenter;
 using WebApplication4.View;
 
@@ -98,7 +98,7 @@ namespace WebApplication4
                                 x.AccountID == DefaultView.GoDaddyAccount.AccountID &&
                                 x.AuctionRef == biddref);
 
-                var enddate = new GoDaddyAuctions2Cs().GetEndDate(biddref);
+                var enddate = new GoDaddyAuctionSniper(DefaultView.Username, ((Master.Default)Master).kernel.Get<IUserRepository>()).GetEndDate(biddref);
                 var linkedRuid = Guid.NewGuid();
                 var auction = new Auctions
                 {

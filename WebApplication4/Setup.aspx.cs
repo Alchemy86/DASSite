@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Web.UI;
+using DAS.Domain.Users;
+using Ninject;
 using WebApplication4.Presenter;
 using WebApplication4.View;
 
@@ -64,7 +66,7 @@ namespace WebApplication4
                 {
                     return (SetupPresenter) Session["presenter"];
                 }
-                return new SetupPresenter(this);
+                return new SetupPresenter(this, ((Master.Default)Master).kernel.Get<IUserRepository>());
             }
         }
     }

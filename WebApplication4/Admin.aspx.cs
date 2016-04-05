@@ -19,8 +19,6 @@ namespace WebApplication4
                 Response.Redirect("BasicSearch.aspx");
             }
             var moo = DefaultView.GetPacificTime.ToString("M/dd/yyyy H:mm:ss");
-
-            var ama = "";
         }
     }
 }

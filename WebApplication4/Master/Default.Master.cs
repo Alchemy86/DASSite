@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Web.Security;
 using System.Web.UI;
-using ASEntityFramework;
+using DAL;
+using Ninject;
 using WebApplication4.Presenter;
 using WebApplication4.View;
+using WebApplication4.App_Code;
+using DAS.Domain.Users;
+using DAS.Domain;
 
 namespace WebApplication4.Master
 {
@@ -62,10 +66,15 @@ namespace WebApplication4.Master
                 {
                     return (GoDaddyActions)Session["GDHelper"];
                 }
-                Session["GDHelper"] = new GoDaddyActions(this);
+                Session["GDHelper"] = new GoDaddyActions(Username, this, kernel.Get<IUserRepository>());
                 return (GoDaddyActions)Session["GDHelper"];
             }
         }
+
+        public IKernel kernel
+        {
+            get { return new StandardKernel(new DefaultBindings()); }
+        } 
 
         public string BugMessage
         {

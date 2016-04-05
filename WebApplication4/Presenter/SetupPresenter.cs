@@ -1,4 +1,5 @@
-﻿using AuctionSniperDLL.Business.Sites;
+﻿using DAS.Domain.Users;
+using GoDaddy;
 using WebApplication4.Model;
 using WebApplication4.View;
 
@@ -8,12 +9,12 @@ namespace WebApplication4.Presenter
     {
         protected ISetupView View;
         protected SetupModel Model;
-        protected GoDaddyAuctions2Cs GoDaddy;
+        protected GoDaddyAuctionSniper GoDaddy;
 
-        public SetupPresenter(ISetupView view)
+        public SetupPresenter(ISetupView view, IUserRepository userRepo)
         {
             View = view;
-            GoDaddy = new GoDaddyAuctions2Cs();
+            GoDaddy = new GoDaddyAuctionSniper(View.DefaultView.UserAccount.Username, userRepo);
             Model = new SetupModel();
         }
 
@@ -24,7 +25,7 @@ namespace WebApplication4.Presenter
 
         public bool ValidateGodaddy(bool tryonce = false)
         {
-            if (!GoDaddy.Login(View.GoDaddyUsername, View.GoDaddyPassword, tryonce ? 3 : 0)) return false;
+            if (!GoDaddy.Login(tryonce ? 3 : 0)) return false;
             CreateGoDaddyAccount();
             return true;
         }

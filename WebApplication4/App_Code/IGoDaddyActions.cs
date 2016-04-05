@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using ASEntityFramework;
-using AuctionSniperDLL.Business.Sites;
+using DAL;
+using GoDaddy;
 
 namespace WebApplication4
 {
     public interface IGoDaddyActions
     {
-        GoDaddyAuctions2Cs GoDaddyApi { get; }
+        GoDaddyAuctionSniper GoDaddyApi { get; }
         bool ValidateCredentials(string username, string password, bool tryonce);
         IQueryable<AuctionSearch> Search(string searchText, int numerofresults);
         IQueryable<AuctionSearch> ListLastSearch();

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ASEntityFramework;
+using DAL;
+using DAS.Domain.Users;
+using Ninject;
+using WebApplication4.App_Code;
 using WebApplication4.Model;
 using WebApplication4.View;
 
@@ -16,7 +19,12 @@ namespace WebApplication4.Presenter
         {
             View = view;
             Model = new DefaultModel();
-            GoDaddyActions = new GoDaddyActions(view);
+            GoDaddyActions = new GoDaddyActions(view.Username, view, kernel.Get<IUserRepository>());
+        }
+
+        public IKernel kernel
+        {
+            get { return new StandardKernel(new DefaultBindings()); }
         }
 
         public Users GetUser()

@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.Migrations;
-using ASEntityFramework;
+using DAL;
 
 namespace WebApplication4.Model
 {

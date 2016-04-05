@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using ASEntityFramework;
+using DAL;
 using WebApplication4.LunchboxAPI;
 
 namespace WebApplication4.Model

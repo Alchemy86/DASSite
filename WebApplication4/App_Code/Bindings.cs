@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using DAL.Repositories;
-using Lunchboxweb.BaseFunctions;
+using DAS.Domain;
+using DAS.Domain.Users;
 using Ninject.Modules;
 
 namespace WebApplication4.App_Code
 {
-    public class Bindings : NinjectModule
+    internal class DefaultBindings : NinjectModule
     {
         public override void Load()
         {
-            
+            Bind<IEmail>().To<Email>();
+            Bind<IUserRepository>().To<UserRepository>();
+            Bind<ISystemRepository>().To<SystemRepository>();
+            Bind<IUnitOfWork>().To<ASEntities>();
         }
     }
 }

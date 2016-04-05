@@ -1,25 +1,26 @@
 ﻿using System.Linq;
-using ASEntityFramework;
-using AuctionSniperDLL.Business.Sites;
+using DAL;
+using DAS.Domain.Users;
+using GoDaddy;
 using WebApplication4.View;
 
 namespace WebApplication4
 {
     public class GoDaddyActions : IGoDaddyActions
     {
-        private GoDaddyAuctions2Cs GodaddyAuctions;
+        private GoDaddyAuctionSniper GodaddyAuctions;
 
-        public GoDaddyAuctions2Cs GoDaddyApi
+        public GoDaddyAuctionSniper GoDaddyApi
         {
             get { return GodaddyAuctions; }
         }
 
         private IDefaultView DefaultView;
 
-        public GoDaddyActions(IDefaultView defaultView)
+        public GoDaddyActions(string username, IDefaultView defaultView, IUserRepository userRepo)
         {
             DefaultView = defaultView;
-            GodaddyAuctions = new GoDaddyAuctions2Cs();
+            GodaddyAuctions = new GoDaddyAuctionSniper(username, userRepo);
         }
 
         /// <summary>
@@ -31,7 +32,7 @@ namespace WebApplication4
         /// <returns></returns>
         public bool ValidateCredentials(string username, string password, bool tryonce = false)
         {
-            return GoDaddyApi.Login(username, password, tryonce ? 3 : 0);
+            return GoDaddyApi.Login(tryonce ? 3 : 0);
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace WebApplication4
         }
 
 
-        public IQueryable<ASEntityFramework.AuctionSearch> ListLastSearch()
+        public IQueryable<AuctionSearch> ListLastSearch()
         {
             return null;
         }

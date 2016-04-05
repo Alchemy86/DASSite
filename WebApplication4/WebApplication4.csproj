@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,13 +40,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ASEntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DASService\AuctionSniperDLL\ASEntityFramework\bin\Debug\ASEntityFramework.dll</HintPath>
+      <HintPath>Bin\DAL.dll</HintPath>
     </Reference>
-    <Reference Include="AuctionSniperDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DAS.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DASService\AuctionSniperDLL\AuctionSniperDLL\bin\Debug\AuctionSniperDLL.dll</HintPath>
+      <HintPath>Bin\DAS.Domain.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -59,11 +60,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lunchbox\LunchboxCode\LunchboxSource\bin\Release\LunchboxSource.dll</HintPath>
     </Reference>
+    <Reference Include="Lunchboxweb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="LunchboxWebControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\LunchboxWebControls\bin\Debug\LunchboxWebControls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -130,7 +140,6 @@
     <Content Include="Search.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="Setup.aspx" />
-    <Content Include="OldDefault.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
@@ -150,6 +159,7 @@
     </Compile>
     <Compile Include="App_Code\AdvancedMenuBuilder.cs" />
     <Compile Include="App_Code\AppConfig.cs" />
+    <Compile Include="App_Code\Bindings.cs" />
     <Compile Include="App_Code\IAdvancedMenuBuilder.cs" />
     <Compile Include="App_Code\IGoDaddyActions.cs" />
     <Compile Include="App_Code\GoDaddyActions.cs" />
@@ -222,13 +232,6 @@
     </Compile>
     <Compile Include="Setup.aspx.designer.cs">
       <DependentUpon>Setup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OldDefault.aspx.cs">
-      <DependentUpon>OldDefault.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OldDefault.aspx.designer.cs">
-      <DependentUpon>OldDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\OptimisePress.cs" />
     <Compile Include="Master\Default.Master.cs">
@@ -331,7 +334,12 @@
       <CachedSettingsPropName>WebApplication4_LunchboxAPI_LunchboxCode_API</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\DASService\AuctionSniper\GoDaddy\DAS.GoDaddy.csproj">
+      <Project>{7fdd8669-9620-4c5a-8db1-992738be0d95}</Project>
+      <Name>DAS.GoDaddy</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
