@@ -40,10 +40,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Bin\DAL.dll</HintPath>
-    </Reference>
     <Reference Include="DAS.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\DAS.Domain.dll</HintPath>
@@ -55,6 +51,16 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Fizzler">
+      <HintPath>..\..\DASService\AuctionSniper\Lunchboxweb\bin\Debug\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="Fizzler.Systems.HtmlAgilityPack">
+      <HintPath>..\..\DASService\AuctionSniper\Lunchboxweb\bin\Debug\Fizzler.Systems.HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DASService\AuctionSniper\Lunchboxweb\bin\Debug\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="LunchboxSource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -335,6 +341,10 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DASService\AuctionSniper\DAL\DAS.DAL.csproj">
+      <Project>{3b99167c-9d35-417f-bbee-99bac61a1dec}</Project>
+      <Name>DAS.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DASService\AuctionSniper\GoDaddy\DAS.GoDaddy.csproj">
       <Project>{7fdd8669-9620-4c5a-8db1-992738be0d95}</Project>
       <Name>DAS.GoDaddy</Name>

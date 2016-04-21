@@ -25,7 +25,8 @@ namespace WebApplication4.Model
         public bool Login(string username, string password)
         {
             if ((DasApi.LoginWP(username, password) != "MATCHED")) return false;
-            var account = Ds.Users.FirstOrDefault(x => x.Username == username);
+            var test = Ds.Users;
+            var account = test.FirstOrDefault(x => x.Username == username);
             if (account == null)
             {
                 account = new Users { Username = username, Password = password };
