@@ -89,10 +89,8 @@ C:\Git\DASSite\WebApplication4\bin\DeathByCaptcha.dll
 C:\Git\DASSite\WebApplication4\bin\Fizzler.Systems.HtmlAgilityPack.dll
 C:\Git\DASSite\WebApplication4\bin\GoDaddy.pdb
 C:\Git\DASSite\WebApplication4\bin\DAL.pdb
-C:\Git\DASSite\WebApplication4\bin\DAS.Domain.pdb
 C:\Git\DASSite\WebApplication4\bin\EntityFramework.xml
 C:\Git\DASSite\WebApplication4\bin\EntityFramework.SqlServer.xml
-C:\Git\DASSite\WebApplication4\bin\Lunchboxweb.pdb
 C:\Git\DASSite\WebApplication4\bin\LunchboxWebControls.pdb
 C:\Git\DASSite\WebApplication4\bin\Ninject.xml
 C:\Git\DASSite\WebApplication4\bin\HtmlAgilityPack.pdb
@@ -101,3 +99,6 @@ C:\Git\DASSite\WebApplication4\bin\Fizzler.Systems.HtmlAgilityPack.xml
 C:\Git\DASSite\WebApplication4\obj\Release\WebApplication4.dll
 C:\Git\DASSite\WebApplication4\obj\Release\WebApplication4.pdb
 C:\Git\DASSite\WebApplication4\obj\Release\WebApplication4.XmlSerializers.dll
+C:\Git\DASSite\WebApplication4\bin\DAL.dll
+C:\Git\DASSite\WebApplication4\bin\Fizzler.dll
+C:\Git\DASSite\WebApplication4\bin\Fizzler.xml

@@ -25,7 +25,7 @@ namespace WebApplication4.Presenter
 
         public bool ValidateGodaddy(bool tryonce = false)
         {
-            if (!GoDaddy.Login(tryonce ? 3 : 0)) return false;
+            if (!GoDaddy.Login(tryonce ? 3 : 0, View.GoDaddyUsername, View.GoDaddyPassword)) return false;
             CreateGoDaddyAccount();
             return true;
         }

@@ -32,7 +32,7 @@ namespace WebApplication4
         /// <returns></returns>
         public bool ValidateCredentials(string username, string password, bool tryonce = false)
         {
-            return GoDaddyApi.Login(tryonce ? 3 : 0);
+            return GoDaddyApi.Login(tryonce ? 3 : 0, username, password);
         }
 
         /// <summary>

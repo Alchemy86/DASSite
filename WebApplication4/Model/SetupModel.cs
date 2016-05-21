@@ -9,7 +9,7 @@ namespace WebApplication4.Model
         {
             using (var ds = new ASEntities())
             {
-                ds.GoDaddyAccount.Add(new GoDaddyAccount{GoDaddyUsername = username, GoDaddyPassword = password, UserID = user.UserID, Verified = true});
+                ds.GoDaddyAccount.Add(new GoDaddyAccount{ GoDaddyUsername = username, GoDaddyPassword = password, UserID = user.UserID, Verified = true});
                 ds.SaveChanges();
             }
         }
