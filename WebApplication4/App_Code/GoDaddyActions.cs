@@ -20,7 +20,7 @@ namespace WebApplication4
         public GoDaddyActions(string username, IDefaultView defaultView, IUserRepository userRepo)
         {
             DefaultView = defaultView;
-            GodaddyAuctions = new GoDaddyAuctionSniper(username, userRepo);
+            GodaddyAuctions = new GoDaddy.GoDaddyAuctionSniper(username, userRepo);
         }
 
         /// <summary>

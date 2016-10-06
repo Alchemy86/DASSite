@@ -5,13 +5,17 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication4", "WebApplication4\WebApplication4.csproj", "{296CC743-5738-4A89-8FD3-6A1B0DB81610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.GoDaddy", "..\DASService\AuctionSniper\GoDaddy\DAS.GoDaddy.csproj", "{7FDD8669-9620-4C5A-8DB1-992738BE0D95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.GoDaddy", "..\DAS\GoDaddy\DAS.GoDaddy.csproj", "{7FDD8669-9620-4C5A-8DB1-992738BE0D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.DAL", "..\DASService\AuctionSniper\DAL\DAS.DAL.csproj", "{3B99167C-9D35-417F-BBEE-99BAC61A1DEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.Domain", "..\DAS\DAS.Domain\DAS.Domain.csproj", "{E21F7956-C2BD-43CA-815E-E4967F840D69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASEntityFramework", "..\DASService\AuctionSniperDLL\ASEntityFramework\ASEntityFramework.csproj", "{8C22DFDB-9D39-47C8-82AE-758663BF4990}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.DAL", "..\DAS\DAL\DAS.DAL.csproj", "{3B99167C-9D35-417F-BBEE-99BAC61A1DEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.Domain", "..\DASService\AuctionSniper\DAS.Domain\DAS.Domain.csproj", "{E21F7956-C2BD-43CA-815E-E4967F840D69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASEntityFramework", "..\DAS\ASEntityFramework\ASEntityFramework.csproj", "{8C22DFDB-9D39-47C8-82AE-758663BF4990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\DAS\Test\Test.csproj", "{74925268-EED8-44BF-8854-286F7B85A5B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunchboxweb", "..\DAS\Lunchboxweb\Lunchboxweb.csproj", "{FCB65216-825D-4C9B-8308-AE36DEBFDC38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,10 @@ Global
 		{7FDD8669-9620-4C5A-8DB1-992738BE0D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FDD8669-9620-4C5A-8DB1-992738BE0D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FDD8669-9620-4C5A-8DB1-992738BE0D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B99167C-9D35-417F-BBEE-99BAC61A1DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B99167C-9D35-417F-BBEE-99BAC61A1DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B99167C-9D35-417F-BBEE-99BAC61A1DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +43,14 @@ Global
 		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C22DFDB-9D39-47C8-82AE-758663BF4990}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E21F7956-C2BD-43CA-815E-E4967F840D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74925268-EED8-44BF-8854-286F7B85A5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74925268-EED8-44BF-8854-286F7B85A5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74925268-EED8-44BF-8854-286F7B85A5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74925268-EED8-44BF-8854-286F7B85A5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB65216-825D-4C9B-8308-AE36DEBFDC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB65216-825D-4C9B-8308-AE36DEBFDC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB65216-825D-4C9B-8308-AE36DEBFDC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB65216-825D-4C9B-8308-AE36DEBFDC38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -341,12 +341,12 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DASService\AuctionSniper\DAL\DAS.DAL.csproj">
-      <Project>{3b99167c-9d35-417f-bbee-99bac61a1dec}</Project>
+    <ProjectReference Include="..\..\DAS\DAL\DAS.DAL.csproj">
+      <Project>{3B99167C-9D35-417F-BBEE-99BAC61A1DEC}</Project>
       <Name>DAS.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DASService\AuctionSniper\GoDaddy\DAS.GoDaddy.csproj">
-      <Project>{7fdd8669-9620-4c5a-8db1-992738be0d95}</Project>
+    <ProjectReference Include="..\..\DAS\GoDaddy\DAS.GoDaddy.csproj">
+      <Project>{7FDD8669-9620-4C5A-8DB1-992738BE0D95}</Project>
       <Name>DAS.GoDaddy</Name>
     </ProjectReference>
   </ItemGroup>
